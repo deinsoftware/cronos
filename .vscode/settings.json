@@ -1,0 +1,21 @@
+{
+    "emmet.excludeLanguages": [],
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "markdown": "html",
+        "javascript": "javascriptreact"
+    },
+    "files.exclude": {
+        "**/*.js.map": {
+            "when": "$(basename)"
+        },
+        "**/node_modules": true,
+    },
+    "html.autoClosingTags": true,
+    "javascript.autoClosingTags": true,
+    "javascript.suggest.autoImports": true,
+    "search.exclude": {
+        "**/coverage": true,
+        "**/node_modules": true
+    },
+}
