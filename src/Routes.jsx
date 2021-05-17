@@ -12,7 +12,7 @@ const Routes = () => {
   const history = useHistory();
 
   return (
-    <Router>
+    <Router basename={'/cronos/'}>
       <Switch history={history}>
         <Route exact path="/" component={Home} />
         <Route exact path="/n2w" component={NumberToWords} />
