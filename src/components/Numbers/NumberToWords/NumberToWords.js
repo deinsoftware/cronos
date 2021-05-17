@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react'
 import converter from 'number-to-words'
 import Speech from 'react-speech'
-import { placeValues } from '../../data/list'
-import { formatNumber, randomPlaces } from '../../utils/numbers'
-import { capitalize } from '../../utils/text'
+import { placeValues, numberTypes } from '../../../data/list'
+import { formatNumber, randomPlaces } from '../../../utils/numbers'
+import { capitalize } from '../../../utils/text'
 
 const NumToWords = ({ history }) => {
-  const handleOnReturn = (e) => {
+  const handleBack = (e) => {
     history.goBack()
   }
 
   const [places, setPlaces] = useState(1)
+  const [type, setType] = useState('c')
   const [number, setNumber] = useState(0)
   const [words, setWords] = useState('')
   const [solution, setSolution] = useState('')
@@ -18,6 +19,10 @@ const NumToWords = ({ history }) => {
 
   const handlePlaces = (event) => {
     setPlaces(event.target.value)
+  }
+
+  const handleTypes = (event) => {
+    setType(event.target.value)
   }
 
   const handleRandom = () => {
@@ -29,10 +34,15 @@ const NumToWords = ({ history }) => {
 
   useEffect(() => {
     handleRandom()
-  }, [places])
+  }, [places, type])
 
   useEffect(() => {
-    const result = converter.toWords(number)
+    let method = 'toWords'
+    if (type === 'o') {
+      method += 'Ordinal'
+    }
+
+    const result = converter[method](number)
     setWords(result)
   }, [number])
 
@@ -55,19 +65,29 @@ const NumToWords = ({ history }) => {
       <h1>Number to Words</h1>
 
       <div>
-        <label htmlFor="range">Decimal Places</label>
-
-        <select name="range" value={places} onChange={(e) => handlePlaces(e)}>
+        <label htmlFor="level">Level</label>
+        <select name="level" value={places} onChange={(e) => handlePlaces(e)}>
           {Object.entries(placeValues).map((value, index) => (
             <option key={index} value={value[0]}>
-              {capitalize(value[1])}
+              {`${index + 1} - ${capitalize(value[1])}`}
+            </option>
+          ))}
+        </select>
+        <label htmlFor="type">Type</label>
+        <select name="type" value={type} onChange={(e) => handleTypes(e)}>
+          {Object.entries(numberTypes).map((value, index) => (
+            <option key={index} value={value[0]}>
+              {`${capitalize(value[1])}`}
             </option>
           ))}
         </select>
       </div>
 
       <div>
-        <span>{formatNumber(number)}</span>
+        <span>
+          {type === 'c' && formatNumber(number)}
+          {type === 'o' && converter.toOrdinal(number)}
+        </span>
         <button onClick={handleRandom}>Random</button>
       </div>
 
@@ -105,7 +125,7 @@ const NumToWords = ({ history }) => {
       )}
 
       <div>
-        <button onClick={handleOnReturn}>Back to Menu</button>
+        <button onClick={handleBack}>Back to Menu</button>
       </div>
     </>
   )

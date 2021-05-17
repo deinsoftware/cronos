@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import NumToWords from './NumToWords'
+import NumToWords from './NumberToWords'
 
 test('render num to words', () => {
   render(<NumToWords />)

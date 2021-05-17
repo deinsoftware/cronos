@@ -11,3 +11,8 @@ export const placeValues = {
   1_000_000_000: 'billions',
   1_000_000_000_000: 'trillions',
 }
+
+export const numberTypes = {
+  c: 'cardinal',
+  o: 'ordinal',
+}
