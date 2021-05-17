@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   useHistory,
@@ -12,7 +12,7 @@ const Routes = () => {
   const history = useHistory();
 
   return (
-    <Router basename={'/cronos/'}>
+    <Router>
       <Switch history={history}>
         <Route exact path="/" component={Home} />
         <Route exact path="/n2w" component={NumberToWords} />
