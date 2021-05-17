@@ -3,7 +3,7 @@ import converter from 'number-to-words'
 import Speech from 'react-speech'
 import { placeValues, numberTypes } from '../../../../data/list'
 import { formatNumber, randomPlaces } from '../../../../utils/numbers'
-import { capitalize } from '../../../../utils/text'
+import { compareText, capitalize } from '../../../../utils/text'
 
 const NumToWords = ({ history }) => {
   const handleBack = (e) => {
@@ -52,10 +52,10 @@ const NumToWords = ({ history }) => {
 
   const handleAnswer = () => {
     let result = ''
-    if (solution === words) {
-      result = 'Correct'
+    if (compareText(solution, words)) {
+      result = 'correct'
     } else {
-      result = `Wrong. The correct answer is ${words}`
+      result = `wrong`
     }
     setAnswer(result)
   }
@@ -118,15 +118,22 @@ const NumToWords = ({ history }) => {
 
         {answer && (
           <div>
-            <span>{answer}</span>
-            {answer === 'Correct' && (
-              <Speech
-                text={words}
-                lang={process.env.REACT_APP_LOCALE.toUpperCase()}
-                displayText="Listen"
-                textAsButton={true}
-              />
-            )}
+            <span>{capitalize(answer)}!</span>
+            <div>
+              {answer === 'correct' && (
+                <Speech
+                  text={words}
+                  lang={process.env.REACT_APP_LOCALE.toUpperCase()}
+                  displayText="Listen"
+                  textAsButton={true}
+                />
+              )}
+              {answer === 'wrong' && (
+                <span>
+                  The correct answer is <strong>{words}</strong>
+                </span>
+              )}
+            </div>
           </div>
         )}
       </div>
