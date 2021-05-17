@@ -9,7 +9,6 @@
         "**/*.js.map": {
             "when": "$(basename)"
         },
-        "**/node_modules": true,
     },
     "html.autoClosingTags": true,
     "javascript.autoClosingTags": true,
