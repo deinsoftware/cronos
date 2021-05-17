@@ -1,11 +1,7 @@
 import Menu from '../Menu/Menu'
 
 const Home = ({ history }) => {
-  return (
-    <div>
-      <Menu history={history} />
-    </div>
-  )
+  return <Menu history={history} />
 }
 
 export default Home

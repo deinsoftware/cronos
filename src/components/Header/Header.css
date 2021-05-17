@@ -1,0 +1,17 @@
+header {
+  margin: 0.5em;
+  max-height: 4em;
+  background-color: var(--color-white);
+}
+
+@media (min-width: 418px) {
+  .header {
+    margin: 1em;
+    max-height: 8em;
+  }
+}
+
+header img {
+  height: 100%;
+  width: auto;
+}

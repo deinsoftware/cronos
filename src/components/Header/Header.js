@@ -1,9 +1,10 @@
+import './Header.css'
 import logo from '../../assets/logo/logo.svg'
 
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="logo" className="responsive" />
+      <img src={logo} alt="logo" />
     </header>
   )
 }

@@ -7,15 +7,19 @@ const Menu = ({ history }) => {
   }
 
   return (
-    <div>
-      <h1>What would you like to practice?</h1>
+    <>
+      <div className="title">
+        <h1>What would you like to practice?</h1>
+      </div>
 
-      <ul>
-        <li data-id="n2w" onClick={handleOnClick}>
-          Number to Words
-        </li>
-      </ul>
-    </div>
+      <div className="content">
+        <ul>
+          <li data-id="n2w" onClick={handleOnClick}>
+            Number to Words
+          </li>
+        </ul>
+      </div>
+    </>
   )
 }
 

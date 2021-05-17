@@ -62,70 +62,73 @@ const NumToWords = ({ history }) => {
 
   return (
     <>
-      <h1>Number to Words</h1>
-
-      <div>
-        <label htmlFor="level">Level</label>
-        <select name="level" value={places} onChange={(e) => handlePlaces(e)}>
-          {Object.entries(placeValues).map((value, index) => (
-            <option key={index} value={value[0]}>
-              {`${index + 1} - ${capitalize(value[1])}`}
-            </option>
-          ))}
-        </select>
-        <label htmlFor="type">Type</label>
-        <select name="type" value={type} onChange={(e) => handleTypes(e)}>
-          {Object.entries(numberTypes).map((value, index) => (
-            <option key={index} value={value[0]}>
-              {`${capitalize(value[1])}`}
-            </option>
-          ))}
-        </select>
+      <div className="subtitle">
+        <h1>
+          <a onClick={handleBack}>&lt;</a>
+        </h1>
+        <h1>Number to Words</h1>
       </div>
 
-      <div>
-        <span>
-          {type === 'c' && formatNumber(number)}
-          {type === 'o' && converter.toOrdinal(number)}
-        </span>
-        <button onClick={handleRandom}>Random</button>
-      </div>
-
-      <div>
-        <label htmlFor="answer">Answer</label>
-        <input
-          type="text"
-          name="answer"
-          id="answer"
-          onChange={(e) => handleSolution(e)}
-          value={solution}
-          placeholder="Write the number in words"
-          disabled={answer}
-        />
-        <button
-          onClick={handleAnswer}
-          disabled={!solution || answer ? true : ''}
-        >
-          Answer
-        </button>
-      </div>
-
-      {answer && (
+      <div className="content">
         <div>
-          <span>{answer}</span>
-          {answer === 'Correct' && (
-            <Speech
-              text={words}
-              lang={process.env.REACT_APP_LOCALE.toUpperCase()}
-              displayText="Listen"
-              textAsButton={true}
-            />
-          )}
+          <label htmlFor="level">Level</label>
+          <select name="level" value={places} onChange={(e) => handlePlaces(e)}>
+            {Object.entries(placeValues).map((value, index) => (
+              <option key={index} value={value[0]}>
+                {`${index + 1} - ${capitalize(value[1])}`}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="type">Type</label>
+          <select name="type" value={type} onChange={(e) => handleTypes(e)}>
+            {Object.entries(numberTypes).map((value, index) => (
+              <option key={index} value={value[0]}>
+                {`${capitalize(value[1])}`}
+              </option>
+            ))}
+          </select>
         </div>
-      )}
 
-      <div>
-        <button onClick={handleBack}>Back to Menu</button>
+        <div>
+          <span>
+            {type === 'c' && formatNumber(number)}
+            {type === 'o' && converter.toOrdinal(number)}
+          </span>
+          <button onClick={handleRandom}>Random</button>
+        </div>
+
+        <div>
+          <label htmlFor="answer">Answer</label>
+          <input
+            type="text"
+            name="answer"
+            id="answer"
+            onChange={(e) => handleSolution(e)}
+            value={solution}
+            placeholder="Write the number in words"
+            disabled={answer}
+          />
+          <button
+            onClick={handleAnswer}
+            disabled={!solution || answer ? true : ''}
+          >
+            Answer
+          </button>
+        </div>
+
+        {answer && (
+          <div>
+            <span>{answer}</span>
+            {answer === 'Correct' && (
+              <Speech
+                text={words}
+                lang={process.env.REACT_APP_LOCALE.toUpperCase()}
+                displayText="Listen"
+                textAsButton={true}
+              />
+            )}
+          </div>
+        )}
       </div>
     </>
   )
