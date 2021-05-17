@@ -42,3 +42,8 @@
     transform: rotate(360deg);
   }
 }
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
