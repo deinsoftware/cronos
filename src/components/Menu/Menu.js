@@ -1,3 +1,5 @@
+import './Menu.css'
+
 const Menu = ({ history }) => {
   const handleOnClick = (e) => {
     const { id } = e.target.dataset
@@ -6,6 +8,8 @@ const Menu = ({ history }) => {
 
   return (
     <div>
+      <h1>What would you like to practice?</h1>
+
       <ul>
         <li data-id="n2w" onClick={handleOnClick}>
           Number to Words

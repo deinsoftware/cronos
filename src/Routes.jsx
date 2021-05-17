@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './components/Home/Home';
-import NumberToWords  from './components/Numbers/NumberToWords/NumberToWords';
+import NumberToWords  from './components/Pages/Numbers/NumberToWords/NumberToWords';
 
 const Routes = () => {
   const history = useHistory();

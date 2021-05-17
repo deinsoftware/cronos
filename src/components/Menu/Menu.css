@@ -1,0 +1,19 @@
+h1 {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  padding: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  color: var(--color-blue);
+}

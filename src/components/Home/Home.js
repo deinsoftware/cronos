@@ -1,12 +1,13 @@
+import Header from '../Header/Header'
 import Menu from '../Menu/Menu'
+import Footer from '../Footer/Footer'
 
 const Home = ({ history }) => {
   return (
     <div>
-      <h1>Cronos</h1>
-      <h2>English Practice</h2>
-
+      <Header></Header>
       <Menu history={history} />
+      <Footer></Footer>
     </div>
   )
 }
