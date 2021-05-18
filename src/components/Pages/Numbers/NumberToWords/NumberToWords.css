@@ -45,7 +45,6 @@ select,
 option {
   width: 80%;
   padding: 0.5em;
-  text-align: right;
   border: 0.15em solid var(--color-primary);
 }
 

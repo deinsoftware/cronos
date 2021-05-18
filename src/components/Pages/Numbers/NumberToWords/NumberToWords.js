@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react'
 import converter from 'number-to-words'
 import Speech from 'speak-tts'
 import { placeValues, numberTypes, answerResult } from '../../../../data/list'
-import { formatNumber, randomPlaces } from '../../../../utils/numbers'
+import {
+  formatOrdinal,
+  formatCardinal,
+  randomPlaces,
+} from '../../../../utils/numbers'
 import { compareText, capitalize } from '../../../../utils/text'
 import './NumberToWords.css'
 
@@ -108,8 +112,8 @@ const NumToWords = ({ history }) => {
           </select>
         </div>
         <div className="number">
-          {type === 'c' && formatNumber(number)}
-          {type === 'o' && converter.toOrdinal(number)}
+          {type === 'o' && formatOrdinal(number)}
+          {type === 'c' && formatCardinal(number)}
         </div>
         <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>

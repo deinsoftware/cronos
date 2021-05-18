@@ -1,4 +1,9 @@
-const { randomBetween, randomPlaces, formatNumber } = require('./numbers')
+const {
+  randomBetween,
+  randomPlaces,
+  formatOrdinal,
+  formatCardinal,
+} = require('./numbers')
 
 describe('numbers.js', () => {
   describe('random', () => {
@@ -53,11 +58,37 @@ describe('numbers.js', () => {
   })
 
   describe('format', () => {
-    describe('formatNumber', () => {
-      test('should ', () => {
+    describe('formatOrdinal', () => {
+      test('should return 1000 with thousand points as 1,000', () => {
         const value = 1000
-        const result = formatNumber(value)
+        const result = formatOrdinal(value)
         expect(result).toBe('1,000')
+      })
+    })
+
+    describe('formatCardinal', () => {
+      test('should return 1st for 1', () => {
+        const value = 1
+        const result = formatCardinal(value)
+        expect(result).toBe('1th')
+      })
+
+      test('should return 2nd for 2', () => {
+        const value = 2
+        const result = formatCardinal(value)
+        expect(result).toBe('2nd')
+      })
+
+      test('should return 3rd for 3', () => {
+        const value = 3
+        const result = formatCardinal(value)
+        expect(result).toBe('3rd')
+      })
+
+      test('should return teh number with suffix th for the rest of numbers', () => {
+        const value = 1000
+        const result = formatCardinal(value)
+        expect(result).toBe('1000th')
       })
     })
   })

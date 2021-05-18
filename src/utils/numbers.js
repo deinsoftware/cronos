@@ -11,9 +11,21 @@ export const randomPlaces = (decimalPlaces = 1) => {
   return result
 }
 
-export const formatNumber = (value) => {
+export const formatOrdinal = (value) => {
   const result = new Intl.NumberFormat(process.env.REACT_APP_LOCALE).format(
     value
   )
+  return result
+}
+
+export const formatCardinal = (value) => {
+  const cardinal = {
+    1: 'st',
+    2: 'nd',
+    3: 'rd',
+  }
+
+  let result = new Intl.NumberFormat(process.env.REACT_APP_LOCALE).format(value)
+  result += cardinal[value] || 'th'
   return result
 }
