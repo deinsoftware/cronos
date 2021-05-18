@@ -65,7 +65,8 @@ const NumToWords = ({ history }) => {
     setSolution(event.target.value)
   }
 
-  const handleAnswer = () => {
+  const handleAnswer = (event) => {
+    event.preventDefault()
     const result = compareText(solution, words) ? 'c' : 'w'
     setAnswer(result)
   }
@@ -86,7 +87,7 @@ const NumToWords = ({ history }) => {
       </div>
 
       <div className="content">
-        <div>
+        <div className="input-group">
           <label htmlFor="level">Level</label>
           <select name="level" value={places} onChange={(e) => handlePlaces(e)}>
             {Object.entries(placeValues).map((value, index) => (
@@ -96,7 +97,7 @@ const NumToWords = ({ history }) => {
             ))}
           </select>
         </div>
-        <div>
+        <div className="input-group">
           <label htmlFor="type">Type</label>
           <select name="type" value={type} onChange={(e) => handleTypes(e)}>
             {Object.entries(numberTypes).map((value, index) => (
@@ -106,43 +107,61 @@ const NumToWords = ({ history }) => {
             ))}
           </select>
         </div>
-
         <div className="number">
           {type === 'c' && formatNumber(number)}
           {type === 'o' && converter.toOrdinal(number)}
         </div>
-        <div>
+        <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>
           {speech.hasBrowserSupport() && (
             <button onClick={handleSpeech}>Listen</button>
           )}
         </div>
 
-        <div>
-          <input
-            type="text"
-            name="answer"
-            id="answer"
-            onChange={(e) => handleSolution(e)}
-            value={solution}
-            placeholder="Write the number in words"
-            disabled={answer}
-          />
-          <button
-            onClick={handleAnswer}
-            disabled={!solution || answer ? true : ''}
-          >
-            Answer
-          </button>
-        </div>
+        {!answer && (
+          <>
+            <div className="input-group">
+              <span>Write the number in words</span>
+            </div>
+
+            <div className="input-group">
+              <textarea
+                name="answer"
+                id="answer"
+                onChange={(e) => handleSolution(e)}
+                value={solution}
+                disabled={answer}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+                rows="4"
+              />
+            </div>
+
+            <div className="input-group">
+              <form onSubmit={handleAnswer}>
+                <button
+                  type="submit"
+                  onClick={handleAnswer}
+                  disabled={!solution || answer ? true : ''}
+                >
+                  Answer
+                </button>
+              </form>
+            </div>
+          </>
+        )}
 
         {answer && (
           <div>
-            <span>{capitalize(answerResult[answer])}!</span>
+            <div className={`result result-${answerResult[answer]}`}>
+              <span>{capitalize(answerResult[answer])}!</span>
+            </div>
             <div>
               {answer === 'w' && (
                 <span>
-                  The correct answer is <strong>{words}</strong>
+                  Correct answer is <strong>{words}</strong>
                 </span>
               )}
             </div>
