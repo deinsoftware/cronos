@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -50,8 +51,15 @@ main > .content {
 }
 
 .title h1 {
+  font-size: 1.5em;
   margin: 0;
   color: var(--color-white);
+}
+
+@media (min-width: 418px) {
+  .title h1 {
+    font-size: 2em;
+  }
 }
 
 .subtitle {
@@ -72,8 +80,15 @@ main > .content {
 }
 
 .subtitle h1 {
+  font-size: 1.5em;
   margin: 0;
   color: var(--color-white);
+}
+
+@media (min-width: 418px) {
+  .subtitle h1 {
+    font-size: 2em;
+  }
 }
 
 img.responsive {

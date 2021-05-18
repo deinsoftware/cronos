@@ -5,13 +5,13 @@ header {
 }
 
 @media (min-width: 418px) {
-  .header {
+  header {
     margin: 1em;
     max-height: 8em;
   }
 }
 
 header img {
-  height: 100%;
-  width: auto;
+  height: auto;
+  max-width: 80%;
 }
