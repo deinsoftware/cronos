@@ -19,13 +19,13 @@ export const formatOrdinal = (value) => {
 }
 
 export const formatCardinal = (value) => {
-  const cardinal = {
+  const suffixes = {
     1: 'st',
     2: 'nd',
     3: 'rd',
   }
 
   let result = new Intl.NumberFormat(process.env.REACT_APP_LOCALE).format(value)
-  result += cardinal[value] || 'th'
+  result += suffixes[value] || 'th'
   return result
 }
