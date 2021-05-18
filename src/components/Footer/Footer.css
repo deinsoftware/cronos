@@ -3,3 +3,7 @@ footer {
   background-color: var(--color-red);
   color: var(--color-white);
 }
+
+a {
+  color: var(--color-white);
+}

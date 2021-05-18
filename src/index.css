@@ -11,6 +11,8 @@
 
   --color-success: #28a745;
   --color-warning: #ffc107;
+  --color-disabled: #ccc;
+  --color-text: #888;
 }
 
 body {

@@ -140,15 +140,13 @@ const NumToWords = ({ history }) => {
             </div>
 
             <div className="input-group">
-              <form onSubmit={handleAnswer}>
-                <button
-                  type="submit"
-                  onClick={handleAnswer}
-                  disabled={!solution || answer ? true : ''}
-                >
-                  Answer
-                </button>
-              </form>
+              <button
+                type="submit"
+                onClick={handleAnswer}
+                disabled={!solution || answer ? true : ''}
+              >
+                Answer
+              </button>
             </div>
           </>
         )}
@@ -159,11 +157,11 @@ const NumToWords = ({ history }) => {
               <span>{capitalize(answerResult[answer])}!</span>
             </div>
             <div>
-              {answer === 'w' && (
-                <span>
-                  Correct answer is <strong>{words}</strong>
-                </span>
-              )}
+              <span>
+                {answer === 'c' && `Yes! is `}
+                {answer === 'w' && `Nop! the correct answer is `}
+                <strong>{words}</strong>
+              </span>
             </div>
           </div>
         )}
