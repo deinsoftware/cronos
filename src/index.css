@@ -17,6 +17,11 @@
   --color-warning: #ffc107;
 }
 
+html {
+  position: fixed;
+  height: 100%;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -37,8 +42,8 @@ code {
 #root {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 main > .content {
