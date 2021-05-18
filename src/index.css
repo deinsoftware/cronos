@@ -19,8 +19,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  position: fixed;
-  height: 100%;
 }
 
 body {
@@ -44,6 +42,7 @@ code {
   display: grid;
   grid-template-rows: auto 1fr auto;
   width: 100vw;
+  min-height: -webkit-fill-available;
   height: 100vh;
 }
 
