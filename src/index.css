@@ -42,7 +42,6 @@ code {
   display: grid;
   grid-template-rows: auto 1fr auto;
   width: 100vw;
-  min-height: -webkit-fill-available;
   height: 100vh;
 }
 
