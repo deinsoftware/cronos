@@ -1,11 +1,26 @@
 import { useEffect, useState } from 'react'
 import converter from 'number-to-words'
-import Speech from 'react-speech'
-import { placeValues, numberTypes } from '../../../../data/list'
+import Speech from 'speak-tts'
+import { placeValues, numberTypes, answerResult } from '../../../../data/list'
 import { formatNumber, randomPlaces } from '../../../../utils/numbers'
 import { compareText, capitalize } from '../../../../utils/text'
+import './NumberToWords.css'
 
 const NumToWords = ({ history }) => {
+  const speech = new Speech()
+  speech.init({
+    volume: 1,
+    lang: process.env.REACT_APP_LOCALE,
+    rate: 1,
+    pitch: 1,
+    splitSentences: true,
+    listeners: {
+      onvoiceschanged: (voices) => {
+        console.log('Event voiceschanged', voices)
+      },
+    },
+  })
+
   const handleBack = (e) => {
     history.goBack()
   }
@@ -51,13 +66,14 @@ const NumToWords = ({ history }) => {
   }
 
   const handleAnswer = () => {
-    let result = ''
-    if (compareText(solution, words)) {
-      result = 'correct'
-    } else {
-      result = `wrong`
-    }
+    const result = compareText(solution, words) ? 'c' : 'w'
     setAnswer(result)
+  }
+
+  const handleSpeech = () => {
+    speech.speak({
+      text: words,
+    })
   }
 
   return (
@@ -79,6 +95,8 @@ const NumToWords = ({ history }) => {
               </option>
             ))}
           </select>
+        </div>
+        <div>
           <label htmlFor="type">Type</label>
           <select name="type" value={type} onChange={(e) => handleTypes(e)}>
             {Object.entries(numberTypes).map((value, index) => (
@@ -89,16 +107,18 @@ const NumToWords = ({ history }) => {
           </select>
         </div>
 
+        <div className="number">
+          {type === 'c' && formatNumber(number)}
+          {type === 'o' && converter.toOrdinal(number)}
+        </div>
         <div>
-          <span>
-            {type === 'c' && formatNumber(number)}
-            {type === 'o' && converter.toOrdinal(number)}
-          </span>
-          <button onClick={handleRandom}>Random</button>
+          <button onClick={handleRandom}>Refresh</button>
+          {speech.hasBrowserSupport() && (
+            <button onClick={handleSpeech}>Listen</button>
+          )}
         </div>
 
         <div>
-          <label htmlFor="answer">Answer</label>
           <input
             type="text"
             name="answer"
@@ -118,17 +138,9 @@ const NumToWords = ({ history }) => {
 
         {answer && (
           <div>
-            <span>{capitalize(answer)}!</span>
+            <span>{capitalize(answerResult[answer])}!</span>
             <div>
-              {answer === 'correct' && (
-                <Speech
-                  text={words}
-                  lang={process.env.REACT_APP_LOCALE.toUpperCase()}
-                  displayText="Listen"
-                  textAsButton={true}
-                />
-              )}
-              {answer === 'wrong' && (
+              {answer === 'w' && (
                 <span>
                   The correct answer is <strong>{words}</strong>
                 </span>

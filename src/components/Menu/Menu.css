@@ -5,6 +5,7 @@ ul {
 }
 
 li {
+  font-size: 1.5em;
   cursor: pointer;
 }
 

@@ -16,3 +16,8 @@ export const numberTypes = {
   c: 'cardinal',
   o: 'ordinal',
 }
+
+export const answerResult = {
+  c: 'correct',
+  w: 'wrong',
+}
