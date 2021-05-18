@@ -24,8 +24,9 @@ export const formatOrdinal = (value) => {
     2: 'nd',
     3: 'rd',
   }
+  const defaultSuffix = 'th'
 
   let result = new Intl.NumberFormat(process.env.REACT_APP_LOCALE).format(value)
-  result += suffixes[value] || 'th'
+  result += suffixes[value] || defaultSuffix
   return result
 }
