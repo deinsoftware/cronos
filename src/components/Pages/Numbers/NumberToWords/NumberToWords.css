@@ -38,7 +38,7 @@ label::after {
 }
 .input-group button:disabled {
   background-color: var(--color-disabled);
-  color: var(--color-text);
+  color: var(--color-secondary);
 }
 
 select,
@@ -46,6 +46,7 @@ option {
   width: 80%;
   padding: 0.5em;
   text-align: right;
+  border: 0.15em solid var(--color-primary);
 }
 
 textarea {
@@ -54,6 +55,7 @@ textarea {
   font-size: inherit;
   white-space: normal;
   text-align: center;
+  border: 0.15em solid var(--color-primary);
 }
 
 .result {

@@ -5,14 +5,16 @@
 }
 
 :root {
+  --color-primary: #000;
+  --color-secondary: #888;
+  --color-disabled: #ccc;
+
   --color-blue: #2e52b2;
   --color-white: #ffffff;
   --color-red: #d80027;
 
   --color-success: #28a745;
   --color-warning: #ffc107;
-  --color-disabled: #ccc;
-  --color-text: #888;
 }
 
 body {
