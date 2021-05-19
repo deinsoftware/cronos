@@ -3,16 +3,19 @@
 }
 
 :root {
-  --color-primary: #000;
-  --color-secondary: #888;
-  --color-disabled: #ccc;
+  --color-primary: rgb(0, 0, 0);
+  --color-secondary: rgb(136, 136, 136);
+  --color-disabled: rgb(204, 204, 204);
 
-  --color-blue: #2e52b2;
-  --color-white: #ffffff;
-  --color-red: #d80027;
+  --color-blue: rgb(46, 82, 178);
+  --background-blue: rgba(46, 82, 178, 0.2);
+  --color-white: rgb(255, 255, 255);
+  --color-red: rgb(216, 0, 39);
 
-  --color-success: #28a745;
-  --color-warning: #ffc107;
+  --color-success: rgb(40, 167, 69);
+  --background-success: rgba(40, 167, 69, 0.2);
+  --color-warning: rgb(255, 193, 7);
+  --background-warning: rgba(255, 193, 7, 0.2);
 }
 
 html,

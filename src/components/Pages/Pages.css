@@ -1,8 +1,8 @@
-main:not:first-child {
-  margin: 0 auto;
+section {
   display: flex;
   flex-direction: column;
-  max-width: 425px;
+  max-width: 769px;
+  margin: 0 auto;
 }
 
 .challenge {
@@ -27,17 +27,19 @@ label::after {
 }
 
 .input-group button {
-  padding: 1em;
+  padding: 0.5em;
+  font-size: 0.8em;
   width: 8em;
   margin: 0 0.5em;
   background-color: var(--color-blue);
   color: var(--color-white);
-  border: 0.5em solid var(--color-white);
+  border: 0.25em solid var(--color-blue);
   border-radius: 0.25em;
   font-weight: bold;
 }
 .input-group button:disabled {
   background-color: var(--color-disabled);
+  border: 0.25em solid var(--color-disabled);
   color: var(--color-secondary);
 }
 
@@ -46,43 +48,4 @@ option {
   width: 80%;
   padding: 0.5em;
   border: 0.15em solid var(--color-primary);
-}
-
-textarea {
-  width: 90%;
-  font-family: inherit;
-  font-size: inherit;
-  white-space: normal;
-  text-align: center;
-  border: 0.15em solid var(--color-primary);
-}
-
-@media (min-width: 418px) {
-  textarea {
-    width: 80%;
-  }
-}
-
-.result {
-  width: 90%;
-  border-radius: 0.25em;
-  margin: 0.5em auto;
-  padding: 0.5em;
-  font-weight: bold;
-  color: var(--color-white);
-}
-
-@media (min-width: 418px) {
-  .result {
-    width: 80%;
-  }
-}
-
-.result-correct {
-  border: 0.5em solid var(--color-success);
-  background: var(--color-success);
-}
-.result-wrong {
-  border: 0.5em solid var(--color-warning);
-  background: var(--color-warning);
 }

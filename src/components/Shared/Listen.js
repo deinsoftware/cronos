@@ -10,11 +10,6 @@ const Listen = ({ text }) => {
     rate: 1,
     pitch: 1,
     splitSentences: true,
-    listeners: {
-      onvoiceschanged: (voices) => {
-        console.log('Event voiceschanged', voices)
-      },
-    },
   })
 
   const handleSpeech = async () => {

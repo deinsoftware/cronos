@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 
 import Home from './components/Home/Home';
-import NumberToWords  from './components/Pages/Numbers/NumberToWords/NumberToWords';
-import DateToWords  from './components/Pages/Dates/DateToWords/DateToWords';
+import NumberToWords  from './components/Pages/Numbers/NumberToWords';
+import DateToWords  from './components/Pages/Dates/DateToWords';
 
 const Routes = () => {
   const history = useHistory();

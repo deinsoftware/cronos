@@ -1,0 +1,41 @@
+textarea {
+  width: 90%;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: normal;
+  text-align: center;
+  border: 0.15em solid var(--color-primary);
+  padding: 0.5em;
+}
+
+@media (min-width: 426px) {
+  textarea {
+    width: 80%;
+  }
+}
+
+.result {
+  width: 90%;
+  border-radius: 0.25em;
+  margin: 0.5em auto;
+  padding: 0.5em;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+@media (min-width: 426px) {
+  .result {
+    width: 80%;
+  }
+}
+
+.result-correct {
+  color: var(--color-success);
+  border: 0.25em solid var(--color-success);
+  background: var(--background-success);
+}
+.result-wrong {
+  color: var(--color-warning);
+  border: 0.25em solid var(--color-warning);
+  background: var(--background-warning);
+}

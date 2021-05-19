@@ -4,7 +4,7 @@ header {
   background-color: var(--color-white);
 }
 
-@media (min-width: 418px) {
+@media (min-width: 426px) {
   header {
     margin: 1em;
     max-height: 8em;

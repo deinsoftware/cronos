@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import './Breadcrumbs.css'
+import './Nav.css'
 
 const Breadcrumbs = ({ history, back, text }) => {
   const handleBack = (e) => {
@@ -8,7 +8,7 @@ const Breadcrumbs = ({ history, back, text }) => {
   }
 
   return (
-    <>
+    <nav>
       <div className={!back ? 'title' : 'subtitle'}>
         {back && (
           <h1>
@@ -17,7 +17,7 @@ const Breadcrumbs = ({ history, back, text }) => {
         )}
         <h1>{text}</h1>
       </div>
-    </>
+    </nav>
   )
 }
 

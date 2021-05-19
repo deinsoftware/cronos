@@ -1,15 +1,28 @@
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 769px;
 }
 
 li {
-  margin-bottom: 0.5em;
-  font-size: 1.5em;
+  margin: 0 auto 0.5em;
+  padding: 0.5em 0;
+  font-size: 1.2em;
+  width: 90%;
+  border: 0.25em solid var(--color-blue);
+  border-radius: 0.25em;
   cursor: pointer;
+  font-weight: bold;
+}
+
+@media (min-width: 426px) {
+  .li {
+    width: 80%;
+  }
 }
 
 li:hover {
   color: var(--color-blue);
+  background-color: var(--background-blue);
 }

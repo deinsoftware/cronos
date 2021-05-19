@@ -1,4 +1,4 @@
-.title {
+nav {
   background-color: var(--color-blue);
   padding: 1rem;
   margin-bottom: 1rem;
@@ -10,7 +10,7 @@
   color: var(--color-white);
 }
 
-@media (min-width: 418px) {
+@media (min-width: 426px) {
   .title h1 {
     font-size: 2em;
   }
@@ -20,9 +20,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-blue);
-  padding: 1rem;
-  margin-bottom: 1rem;
 }
 
 .subtitle a {
@@ -40,7 +37,7 @@
   color: var(--color-white);
 }
 
-@media (min-width: 418px) {
+@media (min-width: 426px) {
   .subtitle h1 {
     font-size: 2em;
   }

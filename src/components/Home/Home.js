@@ -1,13 +1,10 @@
 import Menu from '../Menu/Menu'
-import Breadcrumbs from '../Shared/Breadcrumbs'
+import Nav from '../Shared/Nav'
 
 const Home = ({ history }) => {
   return (
     <>
-      <Breadcrumbs
-        history={history}
-        text="What would you like to practice?"
-      ></Breadcrumbs>
+      <Nav history={history} text="What would you like to practice?"></Nav>
 
       <Menu history={history} />
     </>
