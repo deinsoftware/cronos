@@ -1,6 +1,6 @@
 export const randomNumberBetween = (min = 0, max) => {
   const random = Math.random()
-  const result = random * (max - min + 1) + min / 2
+  const result = random * (max - min) + min / 2
   return Math.round(result)
 }
 
