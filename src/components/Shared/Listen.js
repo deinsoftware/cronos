@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import Speech from 'speak-tts'
 
 const Listen = ({ text }) => {
@@ -28,6 +30,10 @@ const Listen = ({ text }) => {
       )}
     </>
   )
+}
+
+Listen.propTypes = {
+  text: PropTypes.string.isRequired,
 }
 
 export default Listen
