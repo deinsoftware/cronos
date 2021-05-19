@@ -14,6 +14,8 @@ li {
   border-radius: 0.25em;
   cursor: pointer;
   font-weight: bold;
+  color: var(--color-blue);
+  background-color: var(--background-white);
 }
 
 @media (min-width: 426px) {
@@ -23,6 +25,5 @@ li {
 }
 
 li:hover {
-  color: var(--color-blue);
   background-color: var(--background-blue);
 }
