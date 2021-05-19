@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cronos/static/css/main.a4eacf0f.chunk.css",
+    "main.css": "/cronos/static/css/main.324abf31.chunk.css",
     "main.js": "/cronos/static/js/main.94899abb.chunk.js",
     "main.js.map": "/cronos/static/js/main.94899abb.chunk.js.map",
     "runtime-main.js": "/cronos/static/js/runtime-main.9a88e48e.js",
@@ -10,14 +10,14 @@
     "static/js/3.a56bba4b.chunk.js": "/cronos/static/js/3.a56bba4b.chunk.js",
     "static/js/3.a56bba4b.chunk.js.map": "/cronos/static/js/3.a56bba4b.chunk.js.map",
     "index.html": "/cronos/index.html",
-    "static/css/main.a4eacf0f.chunk.css.map": "/cronos/static/css/main.a4eacf0f.chunk.css.map",
+    "static/css/main.324abf31.chunk.css.map": "/cronos/static/css/main.324abf31.chunk.css.map",
     "static/js/2.fb88ea3a.chunk.js.LICENSE.txt": "/cronos/static/js/2.fb88ea3a.chunk.js.LICENSE.txt",
     "static/media/logo.3ee66775.svg": "/cronos/static/media/logo.3ee66775.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9a88e48e.js",
     "static/js/2.fb88ea3a.chunk.js",
-    "static/css/main.a4eacf0f.chunk.css",
+    "static/css/main.324abf31.chunk.css",
     "static/js/main.94899abb.chunk.js"
   ]
 }
