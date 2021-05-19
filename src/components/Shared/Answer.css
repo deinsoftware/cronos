@@ -4,7 +4,8 @@ textarea {
   font-size: inherit;
   white-space: normal;
   text-align: center;
-  border: 0.15em solid var(--color-primary);
+  border: 0.15em solid var(--color-secondary);
+  border-radius: 0.25em;
   padding: 0.5em;
 }
 
