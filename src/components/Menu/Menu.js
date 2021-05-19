@@ -14,7 +14,7 @@ const Menu = ({ history }) => {
             Number to Words
           </li>
           <li data-id="y2w" onClick={handleOnClick}>
-            YearToWords
+            Year to Words
           </li>
           <li data-id="d2w" onClick={handleOnClick}>
             Date to Words
