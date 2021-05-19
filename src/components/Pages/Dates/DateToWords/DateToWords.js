@@ -1,55 +1,35 @@
 import { useEffect, useState } from 'react'
-import converter from 'number-to-words'
+import dateToWords from 'date-to-words'
 
 import Listen from '../../../Shared/Listen'
 import Breadcrumbs from '../../../Shared/Breadcrumbs'
 
-import { placeValues, numberTypes, answerResult } from '../../../../data/list'
-import {
-  formatOrdinal,
-  formatCardinal,
-  randomPlaces,
-} from '../../../../utils/numbers'
+import { answerResult } from '../../../../data/list'
+import { addYear, randomDateBetween, formatDate } from '../../../../utils/date'
 import { compareText, capitalize } from '../../../../utils/text'
 
 import '../../Pages.css'
 
-const NumToWords = ({ history }) => {
-  const [places, setPlaces] = useState(1)
-  const [type, setType] = useState('c')
-  const [number, setNumber] = useState(0)
+const DateToWords = ({ history }) => {
+  const [date, setDate] = useState(new Date())
   const [words, setWords] = useState('')
   const [solution, setSolution] = useState('')
   const [answer, setAnswer] = useState('')
 
-  const handlePlaces = (event) => {
-    setPlaces(event.target.value)
-  }
-
-  const handleTypes = (event) => {
-    setType(event.target.value)
-  }
-
   const handleRandom = () => {
-    const value = randomPlaces(places)
-    setNumber(value)
+    const min = new Date(1800, 0, 1)
+    const max = addYear(100, new Date())
+    const value = randomDateBetween(min, max)
+
+    setDate(value)
     setSolution('')
     setAnswer('')
   }
 
   useEffect(() => {
-    handleRandom()
-  }, [places, type])
-
-  useEffect(() => {
-    let method = 'toWords'
-    if (type === 'o') {
-      method += 'Ordinal'
-    }
-
-    const result = converter[method](number)
+    const result = dateToWords(date)
     setWords(result)
-  }, [number])
+  }, [date])
 
   const handleSolution = (event) => {
     setSolution(event.target.value)
@@ -66,33 +46,10 @@ const NumToWords = ({ history }) => {
       <Breadcrumbs
         history={history}
         back={true}
-        text="Number to Words"
+        text="Date to Words"
       ></Breadcrumbs>
 
-      <div className="input-group">
-        <label htmlFor="level">Level</label>
-        <select name="level" value={places} onChange={(e) => handlePlaces(e)}>
-          {Object.entries(placeValues).map((value, index) => (
-            <option key={index} value={value[0]}>
-              {`${index + 1} - ${capitalize(value[1])}`}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="input-group">
-        <label htmlFor="type">Type</label>
-        <select name="type" value={type} onChange={(e) => handleTypes(e)}>
-          {Object.entries(numberTypes).map((value, index) => (
-            <option key={index} value={value[0]}>
-              {`${capitalize(value[1])}`}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="challenge">
-        {type === 'o' && formatOrdinal(number)}
-        {type === 'c' && formatCardinal(number)}
-      </div>
+      <div className="challenge">{formatDate(date)}</div>
       <div className="input-group">
         <button onClick={handleRandom}>Refresh</button>
         <Listen text={words}></Listen>
@@ -101,7 +58,7 @@ const NumToWords = ({ history }) => {
       {!answer && (
         <>
           <div className="input-group">
-            <span>Write the number in words</span>
+            <span>Write the date in words</span>
           </div>
 
           <div className="input-group">
@@ -149,4 +106,4 @@ const NumToWords = ({ history }) => {
   )
 }
 
-export default NumToWords
+export default DateToWords

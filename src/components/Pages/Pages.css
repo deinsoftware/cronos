@@ -1,11 +1,11 @@
-main > .content {
-  margin: 1rem auto;
+main:not:first-child {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   max-width: 425px;
 }
 
-.number {
+.challenge {
   font-size: calc(4vw + 4vh);
   color: var(--color-red);
 }
@@ -57,12 +57,25 @@ textarea {
   border: 0.15em solid var(--color-primary);
 }
 
+@media (min-width: 418px) {
+  textarea {
+    width: 80%;
+  }
+}
+
 .result {
+  width: 90%;
   border-radius: 0.25em;
-  margin: 0.5em 0;
+  margin: 0.5em auto;
   padding: 0.5em;
   font-weight: bold;
   color: var(--color-white);
+}
+
+@media (min-width: 418px) {
+  .result {
+    width: 80%;
+  }
 }
 
 .result-correct {

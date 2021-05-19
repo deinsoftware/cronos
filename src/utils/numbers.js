@@ -1,4 +1,4 @@
-export const randomBetween = (min = 0, max) => {
+export const randomNumberBetween = (min = 0, max) => {
   const random = Math.random()
   const result = random * (max - min + 1) + min / 2
   return Math.round(result)
@@ -7,7 +7,7 @@ export const randomBetween = (min = 0, max) => {
 export const randomPlaces = (decimalPlaces = 1) => {
   const min = decimalPlaces === 1 ? 0 : decimalPlaces
   const max = decimalPlaces * 10 - 1
-  const result = randomBetween(min, max)
+  const result = randomNumberBetween(min, max)
   return result
 }
 

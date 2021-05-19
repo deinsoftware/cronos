@@ -8,14 +8,13 @@ const Menu = ({ history }) => {
 
   return (
     <>
-      <div className="title">
-        <h1>What would you like to practice?</h1>
-      </div>
-
       <div className="content">
         <ul>
           <li data-id="n2w" onClick={handleOnClick}>
             Number to Words
+          </li>
+          <li data-id="d2w" onClick={handleOnClick}>
+            Date to Words
           </li>
         </ul>
       </div>

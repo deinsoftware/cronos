@@ -7,6 +7,7 @@ import {
 
 import Home from './components/Home/Home';
 import NumberToWords  from './components/Pages/Numbers/NumberToWords/NumberToWords';
+import DateToWords  from './components/Pages/Dates/DateToWords/DateToWords';
 
 const Routes = () => {
   const history = useHistory();
@@ -16,6 +17,7 @@ const Routes = () => {
       <Switch history={history}>
         <Route exact path="/" component={Home} />
         <Route exact path="/n2w" component={NumberToWords} />
+        <Route exact path="/d2w" component={DateToWords} />
       </Switch>
     </Router>
   );

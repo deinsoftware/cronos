@@ -1,5 +1,5 @@
 const {
-  randomBetween,
+  randomNumberBetween,
   randomPlaces,
   formatOrdinal,
   formatCardinal,
@@ -16,19 +16,19 @@ describe('numbers.js', () => {
       test('should return the value in the middle of the range', () => {
         const min = 0
         const max = 9
-        const result = randomBetween(min, max)
+        const result = randomNumberBetween(min, max)
         expect(result).toBe(5)
       })
 
       test('should use 0 as default min value and return the value in the middle of the range', () => {
         const max = 9
-        const result = randomBetween(undefined, max)
+        const result = randomNumberBetween(undefined, max)
         expect(result).toBe(5)
       })
 
       test('should return Not a Number (NaN) when max value is not defined', () => {
         const min = 0
-        const result = randomBetween(min)
+        const result = randomNumberBetween(min)
         expect(result).toBeNaN()
       })
     })
@@ -70,7 +70,7 @@ describe('numbers.js', () => {
       test('should return 1st for 1', () => {
         const value = 1
         const result = formatOrdinal(value)
-        expect(result).toBe('1th')
+        expect(result).toBe('1st')
       })
 
       test('should return 2nd for 2', () => {
@@ -88,7 +88,7 @@ describe('numbers.js', () => {
       test('should return teh number with suffix th for the rest of numbers', () => {
         const value = 1000
         const result = formatOrdinal(value)
-        expect(result).toBe('1000th')
+        expect(result).toBe('1,000th')
       })
     })
   })

@@ -45,56 +45,6 @@ code {
   height: 100vh;
 }
 
-main > .content {
-  margin: 1rem 0;
-}
-
-.title {
-  background-color: var(--color-blue);
-  padding: 1rem;
-}
-
-.title h1 {
-  font-size: 1.5em;
-  margin: 0;
-  color: var(--color-white);
-}
-
-@media (min-width: 418px) {
-  .title h1 {
-    font-size: 2em;
-  }
-}
-
-.subtitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-blue);
-  padding: 1rem;
-}
-
-.subtitle a {
-  padding-right: 0.5em;
-  color: var(--color-red);
-}
-
-.subtitle a:hover {
-  color: var(--color-white);
-}
-
-.subtitle h1 {
-  font-size: 1.5em;
-  margin: 0;
-  color: var(--color-white);
-}
-
-@media (min-width: 418px) {
-  .subtitle h1 {
-    font-size: 2em;
-  }
-}
-
 img.responsive {
   max-width: 100%;
   height: auto;
