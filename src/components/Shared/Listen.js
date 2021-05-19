@@ -17,8 +17,8 @@ const Listen = ({ text }) => {
     },
   })
 
-  const handleSpeech = () => {
-    speech.speak({
+  const handleSpeech = async () => {
+    await speech.speak({
       text: text,
     })
   }
