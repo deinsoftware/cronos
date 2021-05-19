@@ -1,3 +1,5 @@
+import dateToWords from 'date-to-words'
+
 export const isValidDate = (date) => {
   if (!date) {
     return false
@@ -16,6 +18,33 @@ export const addYear = (amount = 1, date = new Date()) => {
 
   const year = date.getFullYear() + amount
   return new Date(date.setFullYear(year))
+}
+
+export const getYear = (date) => {
+  if (!date || !isValidDate(date)) {
+    throw new TypeError('Invalid date parameters')
+  }
+
+  return date.getFullYear()
+}
+
+export const getDateToWords = (date) => {
+  if (!date || !isValidDate(date)) {
+    throw new TypeError('Invalid date parameters')
+  }
+
+  const words = dateToWords(date)
+  return words
+}
+
+export const getYearToWords = (date) => {
+  if (!date || !isValidDate(date)) {
+    throw new TypeError('Invalid date parameters')
+  }
+
+  const words = dateToWords(date)
+  const year = words.split(',')[1].trim()
+  return year
 }
 
 export const randomDateBetween = (min, max = new Date()) => {

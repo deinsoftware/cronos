@@ -6,14 +6,14 @@ import Answer from '../../Shared/Answer'
 
 import {
   addYear,
-  getDateToWords,
+  getYearToWords,
   randomDateBetween,
-  formatDate,
+  getYear,
 } from '../../../utils/date'
 
 import '../Pages.css'
 
-const DateToWords = ({ history }) => {
+const YearToWords = ({ history }) => {
   const [date, setDate] = useState(new Date())
   const [words, setWords] = useState('')
 
@@ -27,16 +27,16 @@ const DateToWords = ({ history }) => {
   }
 
   useEffect(() => {
-    const result = getDateToWords(date)
+    const result = getYearToWords(date)
     setWords(result)
   }, [date])
 
   return (
     <>
-      <Nav history={history} back={true} text="Date to Words"></Nav>
+      <Nav history={history} back={true} text="Year to Words"></Nav>
 
       <section>
-        <div className="challenge">{formatDate(date)}</div>
+        <div className="challenge">{getYear(date)}</div>
         <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>
           <Listen text={words}></Listen>
@@ -48,4 +48,4 @@ const DateToWords = ({ history }) => {
   )
 }
 
-export default DateToWords
+export default YearToWords

@@ -1,5 +1,8 @@
 const {
   addYear,
+  getYear,
+  getDateToWords,
+  getYearToWords,
   randomDateBetween,
   formatDate,
   isValidDate,
@@ -60,6 +63,51 @@ describe('date.js', () => {
           const amount = 10
           const date = ''
           addYear(amount, date)
+        }).toThrow('Invalid date parameters')
+      })
+    })
+
+    describe('getYear', () => {
+      test('should return current year', () => {
+        const date = new Date()
+        const result = getYear(date)
+        expect(result).toBe(2021)
+      })
+
+      test('should throw an exception when has invalid date parameter', () => {
+        expect(() => {
+          const date = ''
+          getYear(date)
+        }).toThrow('Invalid date parameters')
+      })
+    })
+
+    describe('getDateToWords', () => {
+      test('should return date in words', () => {
+        const date = new Date()
+        const result = getDateToWords(date)
+        expect(result).toBe('June the eighteenth, twenty twenty-one')
+      })
+
+      test('should throw an exception when has invalid date parameter', () => {
+        expect(() => {
+          const date = ''
+          getDateToWords(date)
+        }).toThrow('Invalid date parameters')
+      })
+    })
+
+    describe('getYearToWords', () => {
+      test('should return year in words', () => {
+        const date = new Date()
+        const result = getYearToWords(date)
+        expect(result).toBe('twenty twenty-one')
+      })
+
+      test('should throw an exception when has invalid date parameter', () => {
+        expect(() => {
+          const date = ''
+          getYearToWords(date)
         }).toThrow('Invalid date parameters')
       })
     })
