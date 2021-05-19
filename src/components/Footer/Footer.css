@@ -1,5 +1,5 @@
 footer {
-  margin: 0.5em auto;
+  margin-top: 0.5em;
   padding: 0.5em 0;
   background-color: var(--color-red);
   color: var(--color-white);
