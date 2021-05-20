@@ -2,6 +2,8 @@ import { Router } from 'react-router-dom'
 import { render, fireEvent } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 
+import { menuOptions } from './data/menu'
+
 import App from './App'
 
 describe('App.js', () => {
@@ -23,42 +25,18 @@ describe('App.js', () => {
     expect(home).toContainElement(menu)
   })
 
-  it('should navigate to the <NumberToWords/> page', () => {
-    const { container, getByTestId } = renderWithRouter(<App />)
-    const link = getByTestId('n2w-link')
-    fireEvent.click(link)
+  for (const menu of menuOptions) {
+    it(`should navigate to the <${menu.text.replace(/\s/g, '')}/> page`, () => {
+      const { container, getByTestId } = renderWithRouter(<App />)
+      const link = getByTestId(`${menu.path}-link`)
+      fireEvent.click(link)
 
-    const title = 'Number to Words'
-    expect(container.innerHTML).toMatch(title)
+      const title = `${menu.text}`
+      expect(container.innerHTML).toMatch(title)
 
-    const homeLink = getByTestId('home-link')
-    expect(container).toContainElement(homeLink)
-    fireEvent.click(homeLink)
-  })
-
-  it('should navigate to the <YearToWords/> page', () => {
-    const { container, getByTestId } = renderWithRouter(<App />)
-    const link = getByTestId('y2w-link')
-    fireEvent.click(link)
-
-    const title = 'Year to Words'
-    expect(container.innerHTML).toMatch(title)
-
-    const homeLink = getByTestId('home-link')
-    expect(container).toContainElement(homeLink)
-    fireEvent.click(homeLink)
-  })
-
-  it('should navigate to the <DateToWords/> page', () => {
-    const { container, getByTestId } = renderWithRouter(<App />)
-    const link = getByTestId('d2w-link')
-    fireEvent.click(link)
-
-    const title = 'Date to Words'
-    expect(container.innerHTML).toMatch(title)
-
-    const homeLink = getByTestId('home-link')
-    expect(container).toContainElement(homeLink)
-    fireEvent.click(homeLink)
-  })
+      const homeLink = getByTestId('home-link')
+      expect(container).toContainElement(homeLink)
+      fireEvent.click(homeLink)
+    })
+  }
 })
