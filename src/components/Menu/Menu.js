@@ -7,9 +7,9 @@ const Menu = () => {
   return (
     <>
       <div className="main-menu" data-testid="menu">
-        {menuOptions.map((menu, index) => (
+        {menuOptions.map((menu) => (
           <Link
-            key={index}
+            key={menu.path}
             data-testid={`${menu.path}-link`}
             to={`/${menu.path}`}
           >

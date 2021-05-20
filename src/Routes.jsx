@@ -17,9 +17,9 @@ const Routes = () => {
     <Router>
       <Switch history={history}>
         <Route exact path="/" component={Home} />
-        {menuOptions.map((menu, index) => (
+        {menuOptions.map((menu) => (
           <Route
-            key={index}
+            key={menu.path}
             exact
             path={`/${menu.path}`}
             component={menu.component}

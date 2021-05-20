@@ -58,7 +58,7 @@ const NumToWords = ({ history }) => {
           <label htmlFor="level">Level</label>
           <select name="level" value={places} onChange={(e) => handlePlaces(e)}>
             {Object.entries(placeValues).map((value, index) => (
-              <option key={index} value={value[0]}>
+              <option key={value[0]} value={value[0]}>
                 {`${index + 1} - ${capitalize(value[1])}`}
               </option>
             ))}
@@ -67,8 +67,8 @@ const NumToWords = ({ history }) => {
         <div className="input-group">
           <label htmlFor="type">Type</label>
           <select name="type" value={type} onChange={(e) => handleTypes(e)}>
-            {Object.entries(numberTypes).map((value, index) => (
-              <option key={index} value={value[0]}>
+            {Object.entries(numberTypes).map((value) => (
+              <option key={value[0]} value={value[0]}>
                 {`${capitalize(value[1])}`}
               </option>
             ))}
