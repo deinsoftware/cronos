@@ -1,10 +1,15 @@
 import './Header.css'
-import logo from '../../assets/logo/logo.svg'
+
+import logoSvg from '../../assets/logo/logo.svg'
+import logoPng from '../../assets/logo/logo.png'
 
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="logo" />
+      <picture>
+        <source type="image/svg+xml" srcSet={logoSvg} />
+        <img src={logoPng} alt="logo" />
+      </picture>
     </header>
   )
 }
