@@ -1,18 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './App'
+
 import './index.css'
-import Header from './components/Header/Header'
-import Routes from './Routes'
-import Footer from './components/Footer/Footer'
+
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header></Header>
-    <main>
-      <Routes />
-    </main>
-    <Footer></Footer>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -1,25 +1,21 @@
+import { Link } from 'react-router-dom'
+import { menuOptions } from '../../data/menu'
+
 import './Menu.css'
 
-const Menu = ({ history }) => {
-  const handleOnClick = (e) => {
-    const { id } = e.target.dataset
-    history.push(`/${id}`)
-  }
-
+const Menu = () => {
   return (
     <>
-      <div className="content">
-        <ul>
-          <li data-id="n2w" onClick={handleOnClick}>
-            Number to Words
-          </li>
-          <li data-id="y2w" onClick={handleOnClick}>
-            Year to Words
-          </li>
-          <li data-id="d2w" onClick={handleOnClick}>
-            Date to Words
-          </li>
-        </ul>
+      <div className="main-menu" data-testid="menu">
+        {menuOptions.map((menu, index) => (
+          <Link
+            key={index}
+            data-testid={`${menu.path}-link`}
+            to={`/${menu.path}`}
+          >
+            {menu.text}
+          </Link>
+        ))}
       </div>
     </>
   )

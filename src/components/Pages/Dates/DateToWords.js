@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import Nav from '../../Shared/Nav'
+import Nav from '../../Nav/Nav'
 import Listen from '../../Shared/Listen'
 import Answer from '../../Shared/Answer'
 
@@ -33,7 +33,7 @@ const DateToWords = ({ history }) => {
 
   return (
     <>
-      <Nav history={history} back={true} text="Date to Words"></Nav>
+      <Nav text="Date to Words"></Nav>
 
       <section>
         <div className="challenge">{formatDate(date)}</div>
@@ -42,7 +42,7 @@ const DateToWords = ({ history }) => {
           <Listen text={words}></Listen>
         </div>
 
-        <Answer words={words}></Answer>
+        <Answer words={words} rows={2}></Answer>
       </section>
     </>
   )

@@ -1,13 +1,13 @@
 import Menu from '../Menu/Menu'
-import Nav from '../Shared/Nav'
+import Nav from '../Nav/Nav'
 
 const Home = ({ history }) => {
   return (
-    <>
-      <Nav history={history} text="What would you like to practice?"></Nav>
+    <div data-testid="home">
+      <Nav back={false} text="What would you like to practice?"></Nav>
 
-      <Menu history={history} />
-    </>
+      <Menu />
+    </div>
   )
 }
 

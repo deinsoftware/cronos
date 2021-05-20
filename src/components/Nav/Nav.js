@@ -1,18 +1,17 @@
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import './Nav.css'
 
-const Breadcrumbs = ({ history, back, text }) => {
-  const handleBack = (e) => {
-    history.goBack()
-  }
-
+const Nav = ({ back, text }) => {
   return (
-    <nav>
+    <nav data-testid="navbar">
       <div className={!back ? 'title' : 'subtitle'}>
         {back && (
           <h1>
-            <a onClick={handleBack}>&lt;</a>
+            <Link data-testid="home-link" to="/">
+              &lt;
+            </Link>
           </h1>
         )}
         <h1>{text}</h1>
@@ -21,14 +20,13 @@ const Breadcrumbs = ({ history, back, text }) => {
   )
 }
 
-Breadcrumbs.propTypes = {
-  history: PropTypes.object.isRequired,
+Nav.propTypes = {
   back: PropTypes.bool,
   text: PropTypes.string.isRequired,
 }
 
-Breadcrumbs.defaultProps = {
-  back: false,
+Nav.defaultProps = {
+  back: true,
 }
 
-export default Breadcrumbs
+export default Nav

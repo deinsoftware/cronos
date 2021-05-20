@@ -23,6 +23,7 @@ nav {
 }
 
 .subtitle a {
+  text-decoration: none;
   padding-right: 0.5em;
   color: var(--color-red);
 }

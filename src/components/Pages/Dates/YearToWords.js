@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import Nav from '../../Shared/Nav'
+import Nav from '../../Nav/Nav'
 import Listen from '../../Shared/Listen'
 import Answer from '../../Shared/Answer'
 
@@ -33,7 +33,7 @@ const YearToWords = ({ history }) => {
 
   return (
     <>
-      <Nav history={history} back={true} text="Year to Words"></Nav>
+      <Nav text="Year to Words"></Nav>
 
       <section>
         <div className="challenge">{getYear(date)}</div>

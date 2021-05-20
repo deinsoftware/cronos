@@ -1,10 +1,12 @@
+import PropTypes from 'prop-types'
+
 import { useEffect, useState } from 'react'
 import { compareText, capitalize } from '../../utils/text'
 import { answerResult } from '../../data/list'
 
 import './Answer.css'
 
-const Answer = ({ words }) => {
+const Answer = ({ words, rows }) => {
   const [answer, setAnswer] = useState('')
 
   const handleAnswer = (event) => {
@@ -44,7 +46,7 @@ const Answer = ({ words }) => {
               autoCorrect="off"
               autoCapitalize="off"
               spellCheck="false"
-              rows="4"
+              rows={rows}
             />
           </div>
           <div className="input-group">
@@ -74,6 +76,15 @@ const Answer = ({ words }) => {
       )}
     </>
   )
+}
+
+Answer.propTypes = {
+  words: PropTypes.string.isRequired,
+  rows: PropTypes.number,
+}
+
+Answer.defaultProps = {
+  rows: 1,
 }
 
 export default Answer

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import converter from 'number-to-words'
 
-import Nav from '../../Shared/Nav'
+import Nav from '../../Nav/Nav'
 import Listen from '../../Shared/Listen'
 import Answer from '../../Shared/Answer'
 
@@ -51,7 +51,7 @@ const NumToWords = ({ history }) => {
 
   return (
     <>
-      <Nav history={history} back={true} text="Number to Words"></Nav>
+      <Nav text="Number to Words"></Nav>
 
       <section>
         <div className="input-group">
@@ -82,7 +82,7 @@ const NumToWords = ({ history }) => {
           <button onClick={handleRandom}>Refresh</button>
           <Listen text={words}></Listen>
         </div>
-        <Answer words={words}></Answer>
+        <Answer words={words} rows={4}></Answer>
       </section>
     </>
   )

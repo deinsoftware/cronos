@@ -6,9 +6,9 @@ import {
 } from 'react-router-dom';
 
 import Home from './components/Home/Home';
-import NumberToWords from './components/Pages/Numbers/NumberToWords';
-import YearToWords from './components/Pages/Dates/YearToWords';
-import DateToWords from './components/Pages/Dates/DateToWords';
+import NotFound from './components/NotFound/NotFound';
+
+import {menuOptions} from './data/menu'
 
 const Routes = () => {
   const history = useHistory();
@@ -17,9 +17,15 @@ const Routes = () => {
     <Router>
       <Switch history={history}>
         <Route exact path="/" component={Home} />
-        <Route exact path="/n2w" component={NumberToWords} />
-        <Route exact path="/y2w" component={YearToWords} />
-        <Route exact path="/d2w" component={DateToWords} />
+        {menuOptions.map((menu, index) => (
+          <Route
+            key={index}
+            exact
+            path={`/${menu.path}`}
+            component={menu.component}
+          />
+        ))}
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );
