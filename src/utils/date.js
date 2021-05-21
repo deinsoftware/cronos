@@ -4,8 +4,7 @@ export const isValidDate = (date) => {
   if (!date) {
     return false
   }
-  const result = !isNaN(date.valueOf())
-  return result
+  return !isNaN(date.valueOf())
 }
 
 export const addYear = (amount = 1, date = new Date()) => {
@@ -43,8 +42,7 @@ export const getYearToWords = (date) => {
   }
 
   const words = dateToWords(date)
-  const year = words.split(',')[1].trim()
-  return year
+  return words.split(',')[1].trim()
 }
 
 export const randomDateBetween = (min, max = new Date()) => {
@@ -52,13 +50,11 @@ export const randomDateBetween = (min, max = new Date()) => {
     throw new TypeError('Invalid date parameters')
   }
 
-  const date = new Date(
+  return new Date(
     min.getTime() + Math.random() * (max.getTime() - min.getTime())
   )
-  return date
 }
 
 export const formatDate = (value) => {
-  const result = new Intl.DateTimeFormat('en-US').format(value)
-  return result
+  return new Intl.DateTimeFormat('en-US').format(value)
 }

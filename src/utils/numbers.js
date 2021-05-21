@@ -7,15 +7,11 @@ export const randomNumberBetween = (min = 0, max) => {
 export const randomPlaces = (decimalPlaces = 1) => {
   const min = decimalPlaces === 1 ? 0 : decimalPlaces
   const max = decimalPlaces * 10 - 1
-  const result = randomNumberBetween(min, max)
-  return result
+  return randomNumberBetween(min, max)
 }
 
 export const formatCardinal = (value) => {
-  const result = new Intl.NumberFormat(process.env.REACT_APP_LOCALE).format(
-    value
-  )
-  return result
+  return new Intl.NumberFormat(process.env.REACT_APP_LOCALE).format(value)
 }
 
 export const formatOrdinal = (value) => {

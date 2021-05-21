@@ -38,14 +38,11 @@ code {
 }
 
 #root {
-  text-align: center;
-}
-
-#root {
   display: grid;
   grid-template-rows: auto 1fr auto;
   width: 100vw;
   height: 100vh;
+  text-align: center;
 }
 
 img.responsive {
