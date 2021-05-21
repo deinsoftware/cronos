@@ -8,7 +8,7 @@ package-lock.json
 .pnp.js
 
 # testing
-/coverage
+*/lcov-report
 
 # production
 /build

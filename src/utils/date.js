@@ -32,8 +32,7 @@ export const getDateToWords = (date) => {
     throw new TypeError('Invalid date parameters')
   }
 
-  const words = dateToWords(date)
-  return words
+  return dateToWords(date)
 }
 
 export const getYearToWords = (date) => {

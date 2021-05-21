@@ -1,4 +1,8 @@
-export const randomNumberBetween = (min = 0, max) => {
+export const randomNumberBetween = (min, max) => {
+  if (!min) {
+    min = 0
+  }
+
   const random = Math.random()
   const result = random * (max - min) + min / 2
   return Math.round(result)
