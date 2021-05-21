@@ -1,3 +1,9 @@
+[![Sonar-reliability](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dein_cronos)
+[![sonar-security](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=security_rating)](https://sonarcloud.io/dashboard?id=dein_cronos)
+[![sonar-maintainability](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein_cronos)
+[![sonar-coverage](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=coverage)](https://sonarcloud.io/dashboard?id=dein_cronos)
+[![license](https://img.shields.io/github/license/deinsoftware/colorify)](LICENSE.md)
+
 # Cronos
 
 English Practice for Free!
