@@ -13,7 +13,7 @@ import {
 
 import '../Pages.css'
 
-const DateToWords = ({ history }) => {
+const DateToWords = () => {
   const [date, setDate] = useState(new Date())
   const [words, setWords] = useState('')
 

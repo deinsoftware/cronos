@@ -15,7 +15,7 @@ import { capitalize } from '../../../utils/text'
 
 import '../Pages.css'
 
-const NumToWords = ({ history }) => {
+const NumToWords = () => {
   const [places, setPlaces] = useState(1)
   const [type, setType] = useState('c')
   const [number, setNumber] = useState(0)
