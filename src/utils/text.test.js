@@ -1,4 +1,4 @@
-const { compareText, capitalize } = require('./text')
+const { capitalize, compareText } = require('./text')
 
 describe('text.js', () => {
   describe('compare', () => {

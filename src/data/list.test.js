@@ -1,4 +1,4 @@
-const { placeValues, numberTypes, answerResult } = require('./list')
+const { answerResult, numberTypes, placeValues } = require('./list')
 
 describe('list.js', () => {
   describe('placeValues', () => {

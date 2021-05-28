@@ -1,11 +1,11 @@
 const {
   addYear,
-  getYear,
-  getDateToWords,
-  getYearToWords,
-  randomDateBetween,
   formatDate,
+  getDateToWords,
+  getYear,
+  getYearToWords,
   isValidDate,
+  randomDateBetween,
 } = require('./date')
 
 describe('date.js', () => {

@@ -1,8 +1,8 @@
 const {
+  formatCardinal,
+  formatOrdinal,
   randomNumberBetween,
   randomPlaces,
-  formatOrdinal,
-  formatCardinal,
 } = require('./numbers')
 
 describe('numbers.js', () => {
