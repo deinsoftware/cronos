@@ -1,5 +1,5 @@
 import Header from './components/Header/Header'
-import Routes from './Routes'
+import Routes from './Routes.jsx'
 import Footer from './components/Footer/Footer'
 
 function App() {
