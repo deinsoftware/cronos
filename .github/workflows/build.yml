@@ -31,8 +31,8 @@ jobs:
       - name: Sonarqube
         if: success()
         env:
-          # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_WORKSPACE: ${{ env.workspace }}
         run: sonar-scanner
             -Dsonar.projectKey=dein:cronos
             -Dsonar.organization=dein
