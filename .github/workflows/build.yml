@@ -20,13 +20,18 @@ jobs:
         run: npm install
       - name: Jest Test
         run: npm run test:c
-      - name: fix code coverage paths
-        working-directory: ./coverage
-        run: |
-          sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' lcov.info
-      - name: SonarCloud Scan
+      - name: Sonarqube
         if: success()
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: warchant/setup-sonar-scanner@v3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: sonar-scanner
+            -Dsonar.projectKey=dein:cronos
+            -Dsonar.organization=dein
+            -Dsonar.projectName=cronos
+            -Dsonar.projectVersion=0.1.0
+            -Dsonar.host.url=https://sonarcloud.io/
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.projectKey=sonar-scanner-action
+            -Dsonar.javascript.lcov.reportPaths=${{ $GITHUB_WORKSPACE }}/coverage/lcov.info
