@@ -39,5 +39,4 @@ jobs:
             -Dsonar.projectVersion=0.1.0
             -Dsonar.host.url=https://sonarcloud.io/
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.verbose=true
+            -Dsonar.javascript.lcov.reportPaths=**/coverage/lcov.info
