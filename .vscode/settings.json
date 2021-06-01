@@ -18,6 +18,7 @@
         "**/node_modules": true
     },
     "cSpell.words": [
+        "Qube",
         "testid"
     ],
 }
