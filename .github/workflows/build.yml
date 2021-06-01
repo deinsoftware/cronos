@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   test:
-    name: Test
+    name: JestTest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,6 +16,8 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm run test:c
+        env:
+          CI: true
   sonarcloud:
     if: success()
     name: SonarCloud
