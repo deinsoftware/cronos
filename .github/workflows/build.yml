@@ -16,13 +16,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
-      - run: npm run test:c
-        env:
-          CI: true
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}/coverage/*
+      - name: Install dependencies
+        run: npm install
+      - name: Jest Test
+        run: npm run test:c
       - name: SonarCloud Scan
         if: success()
         uses: SonarSource/sonarcloud-github-action@master
