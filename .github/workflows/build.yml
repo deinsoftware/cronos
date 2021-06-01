@@ -32,7 +32,6 @@ jobs:
         if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        path: ${{ github.workspace }}
         run: sonar-scanner
             -Dsonar.projectKey=dein:cronos
             -Dsonar.organization=dein
