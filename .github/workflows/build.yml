@@ -22,7 +22,7 @@ jobs:
           CI: true
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/coverage/*
       - name: SonarCloud Scan
         if: success()
         uses: SonarSource/sonarcloud-github-action@master
