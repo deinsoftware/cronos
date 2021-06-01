@@ -25,6 +25,11 @@ jobs:
       
       - name: Jest Test
         run: npm run test:c
+
+      - name: fix code coverage paths
+        working-directory: ./coverage
+        run: |
+          sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' lcov.info
       
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
@@ -39,4 +44,4 @@ jobs:
             -Dsonar.projectVersion=0.1.0
             -Dsonar.host.url=https://sonarcloud.io/
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.javascript.lcov.reportPaths=**/coverage/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
