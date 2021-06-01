@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: SonarCloud
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -39,5 +39,4 @@ jobs:
             -Dsonar.projectVersion=0.1.0
             -Dsonar.host.url=https://sonarcloud.io/
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.projectKey=sonar-scanner-action
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
