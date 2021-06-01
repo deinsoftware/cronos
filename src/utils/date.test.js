@@ -14,7 +14,7 @@ describe('date.js', () => {
     jest.spyOn(global.Math, 'random').mockReturnValue(randomValue)
 
     const DateReal = global.Date
-    const mockDate = new Date(2021, 5, 18)
+    const mockDate = new Date(2021, 5, 18, 3, 24, 0)
     jest.spyOn(global, 'Date').mockImplementation((...args) => {
       if (args.length) {
         return new DateReal(...args)
@@ -42,13 +42,13 @@ describe('date.js', () => {
     describe('addYear', () => {
       test('should return current date plus 1 years when has no parameters', () => {
         const result = addYear().toJSON()
-        expect(result).toBe('2022-06-18T05:00:00.000Z')
+        expect(result).toBe('2022-06-18T08:24:00.000Z')
       })
 
       test('should return current date plus 10 years', () => {
         const amount = 10
         const result = addYear(amount, new Date()).toJSON()
-        expect(result).toBe('2031-06-18T05:00:00.000Z')
+        expect(result).toBe('2031-06-18T08:24:00.000Z')
       })
 
       test('should throw an exception when has invalid amount parameter', () => {
@@ -116,9 +116,9 @@ describe('date.js', () => {
   describe('random', () => {
     describe('randomNumber', () => {
       test('should return the value in the middle of the range', () => {
-        const min = new Date(2012, 0, 1)
+        const min = new Date(2012, 0, 1, 10, 10, 10)
         const result = randomDateBetween(min).toJSON()
-        expect(result).toBe('2016-09-24T05:00:00.000Z')
+        expect(result).toBe('2016-09-24T11:47:05.000Z')
       })
 
       test('should return throw an exception when has no parameters', () => {
