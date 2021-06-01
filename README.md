@@ -9,7 +9,6 @@
 <!-- ![Cronos](.github/social/preview.png "Cronos") -->
 
 **Cronos** was created to help people to practice english for free and learning by doing!
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Menu
 
