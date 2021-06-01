@@ -1,9 +1,9 @@
 # Cronos
 
-[![Sonar-reliability](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dein_cronos)
-[![sonar-security](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=security_rating)](https://sonarcloud.io/dashboard?id=dein_cronos)
-[![sonar-maintainability](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein_cronos)
-[![sonar-coverage](https://sonarcloud.io/api/project_badges/measure?project=dein_cronos&metric=coverage)](https://sonarcloud.io/dashboard?id=dein_cronos)
+[![Sonar-reliability](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
+[![sonar-security](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=security_rating)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
+[![sonar-maintainability](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
+[![sonar-coverage](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
 [![license](https://img.shields.io/github/license/deinsoftware/colorify)](LICENSE.md)
 
 <!-- ![Cronos](.github/social/preview.png "Cronos") -->
@@ -70,7 +70,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 - [React](https://reactjs.org/) - React. A JavaScript library for building user interfaces
 - [VS Code](https://code.visualstudio.com/) - Code editing redefined.
 - [VSCode - React Flavored](https://dev.to/equiman/vscode-react-flavored-134h) - Development setup and extensions for React.
-- [SonarQube](https://sonarcloud.io/dashboard?id=dein_cronos) - Continuous code quality.
+- [SonarQube](https://sonarcloud.io/dashboard?id=dein%3Acronos) - Continuous code quality.
 
 ### Libraries
 
