@@ -6,22 +6,25 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run test:c
   sonarcloud:
+    if: success()
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: Install dependencies
-        run: npm install
-      - name: Run test
-        run: npm run test:c
       - name: SonarCloud Scan
-        if: success()
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
