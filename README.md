@@ -97,7 +97,7 @@ See also the list of [contributors](https://github.com/deinsoftware/cronos/contr
 
 ### Sponsors
 
-If this project help you, consider buy me a cup of coffee.
+If this project helps you, consider buying me a cup of coffee.
 
 [![paypal](https://img.shields.io/badge/-PayPal-gray?style=flat&labelColor=00457C&logo=paypal&logoColor=white&link=https://paypal.me/equiman/3)](https://paypal.me/equiman/3)
 [![patreon](https://img.shields.io/badge/-Patreon-gray?style=flat&labelColor=052d49&logo=patreon&logoColor=F96854&link=https://patreon.com/equiman)](https://patreon.com/equiman)
