@@ -1,5 +1,7 @@
 # Cronos
 
+[![build](https://github.com/deinsoftware/cronos/actions/workflows/build.yml/badge.svg)](https://github.com/deinsoftware/cronos/actions/workflows/build.yml)
+[![deploy](https://github.com/deinsoftware/cronos/actions/workflows/deploy.yml/badge.svg)](https://github.com/deinsoftware/cronos/actions/workflows/deploy.yml)
 [![Sonar-reliability](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
 [![sonar-security](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=security_rating)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
 [![sonar-maintainability](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
