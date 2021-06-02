@@ -8,9 +8,9 @@
 [![sonar-coverage](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
 [![license](https://img.shields.io/github/license/deinsoftware/colorify)](LICENSE.md)
 
-<!-- ![Cronos](.github/social/preview.png "Cronos") -->
+![Cronos](.github/social/preview.png 'Cronos App')
 
-**Cronos** was created to help people to practice english for free and learning by doing!
+**Cronos** was created to help people to practice English for free and learn by doing!
 
 ## Menu
 
