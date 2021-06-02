@@ -20,11 +20,6 @@ jobs:
   
       - run: npm install
       - run: npm run test:c
-
-      - name: fix code coverage paths
-        working-directory: ./coverage
-        run: |
-          sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' lcov.info
       
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
