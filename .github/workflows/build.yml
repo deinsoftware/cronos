@@ -19,7 +19,9 @@ jobs:
       - run: npm install
       - run: npm run test:c
 
-      - run: ls coverage/lcov.info
+      - name: Display coverage files
+        run: ls -R
+        working-directory: coverage
 
       - uses: actions/upload-artifact@master
         with:
@@ -38,9 +40,11 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: coverage-artifact
-          path: coverage/lcov.info
+          path: coverage
 
-      - run: ls coverage/lcov.info
+      - name: Display coverage files
+        run: ls -R
+        working-directory: coverage
       
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
