@@ -18,11 +18,13 @@
         "**/node_modules": true
     },
     "cSpell.words": [
+        "Dsonar",
         "Qube",
         "Sonarqube",
         "dein",
         "lcov",
         "sonarcloud",
+        "sonarsource",
         "testid"
     ],
 }
