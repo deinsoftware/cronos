@@ -8,18 +8,34 @@ on:
       types: [opened, synchronize, reopened]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - run: npm install
+      - run: npm run test:c
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: coverage-artifact
+          path: coverage/lcov.info
+
   sonar:
+    if: ${{ success() }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
   
-      - run: npm install
-      - run: npm run test:c
+      - uses: actions/download-artifact@master
+        with:
+          name: coverage-artifact
+          path: coverage/lcov.info
       
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
