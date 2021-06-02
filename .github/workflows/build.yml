@@ -9,13 +9,16 @@ on:
       - main
 
 jobs:
-  build:
+  sonar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+  
       - run: npm install
       - run: npm run test:c
 
@@ -24,13 +27,6 @@ jobs:
         run: |
           sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' lcov.info
       
-  sonar:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
         env:
