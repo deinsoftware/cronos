@@ -4,15 +4,15 @@ export const isValidDate = (date) => {
   if (!date) {
     return false
   }
-  return !isNaN(date.valueOf())
+  return !Number.isNaN(date.valueOf())
 }
 
 export const addYear = (amount = 1, date = new Date()) => {
-  if (!amount || isNaN(amount)) {
-    throw new TypeError('Invalid amount parameters')
+  if (!amount || Number.isNaN(amount)) {
+    throw new TypeError(`Invalid amount parameter: ${amount}`)
   }
   if (!date || !isValidDate(date)) {
-    throw new TypeError('Invalid date parameters')
+    throw new TypeError(`Invalid date parameter: ${date}`)
   }
 
   const year = date.getFullYear() + amount
@@ -21,7 +21,7 @@ export const addYear = (amount = 1, date = new Date()) => {
 
 export const getYear = (date) => {
   if (!date || !isValidDate(date)) {
-    throw new TypeError('Invalid date parameters')
+    throw new TypeError(`Invalid date parameter: ${date}`)
   }
 
   return date.getFullYear()
@@ -29,7 +29,7 @@ export const getYear = (date) => {
 
 export const getDateToWords = (date) => {
   if (!date || !isValidDate(date)) {
-    throw new TypeError('Invalid date parameters')
+    throw new TypeError(`Invalid date parameter: ${date}`)
   }
 
   return dateToWords(date)
@@ -37,7 +37,7 @@ export const getDateToWords = (date) => {
 
 export const getYearToWords = (date) => {
   if (!date || !isValidDate(date)) {
-    throw new TypeError('Invalid date parameters')
+    throw new TypeError(`Invalid date parameter: ${date}`)
   }
 
   const words = dateToWords(date)
@@ -46,7 +46,7 @@ export const getYearToWords = (date) => {
 
 export const randomDateBetween = (min, max = new Date()) => {
   if (!isValidDate(min) || !isValidDate(max)) {
-    throw new TypeError('Invalid date parameters')
+    throw new TypeError('Invalid date parameter')
   }
 
   return new Date(

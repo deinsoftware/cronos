@@ -37,6 +37,10 @@ const NumToWords = () => {
 
   useEffect(() => {
     handleRandom()
+  }, [])
+
+  useEffect(() => {
+    handleRandom()
   }, [places, type])
 
   useEffect(() => {

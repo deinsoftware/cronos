@@ -27,6 +27,10 @@ const DateToWords = () => {
   }
 
   useEffect(() => {
+    handleRandom()
+  }, [])
+
+  useEffect(() => {
     const result = getDateToWords(date)
     setWords(result)
   }, [date])
