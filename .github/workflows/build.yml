@@ -25,6 +25,7 @@ jobs:
           path: coverage/lcov.info
 
   sonar:
+    needs: build
     if: ${{ success() }}
     runs-on: ubuntu-latest
     steps:
