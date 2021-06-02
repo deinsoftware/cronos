@@ -4,15 +4,22 @@ import Speech from 'speak-tts'
 
 const Listen = ({ text }) => {
   const speech = new Speech()
-  speech.init({
-    volume: 1,
-    lang: process.env.REACT_APP_LOCALE,
-    rate: 1,
-    pitch: 1,
-    splitSentences: true,
-  })
+  if (speech.hasBrowserSupport()) {
+    const options = {
+      volume: 1,
+      lang: process.env.REACT_APP_LOCALE,
+      rate: 1,
+      pitch: 1,
+      splitSentences: true,
+    }
+
+    speech.init(options).catch((error) => {
+      console.error('An error occurred while initializing : ', error)
+    })
+  }
 
   const handleSpeech = async () => {
+    // TODO: disable button while is working
     await speech.speak({
       text: text,
     })

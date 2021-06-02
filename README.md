@@ -79,6 +79,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 - [date-to-words](https://www.npmjs.com/package/date-to-words) - Convert date into its spoken representation.
 - [number-to-words](https://www.npmjs.com/package/number-to-words) - Convert numbers into words, ordinal words and ordinal numbers.
 - [speak-tts](https://www.npmjs.com/package/speak-tts) - Speech synthesis made easy - Browser based text to speech (TTS
+- [time-in-words](https://www.npmjs.com/package/time-in-words)
 
 ### Contributing
 

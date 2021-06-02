@@ -55,7 +55,7 @@ describe('date.js', () => {
         expect(() => {
           const amount = ''
           addYear(amount)
-        }).toThrow('Invalid amount parameters')
+        }).toThrow('Invalid amount parameter')
       })
 
       test('should throw an exception when has invalid amount parameter', () => {
@@ -63,7 +63,7 @@ describe('date.js', () => {
           const amount = 10
           const date = ''
           addYear(amount, date)
-        }).toThrow('Invalid date parameters')
+        }).toThrow('Invalid date parameter')
       })
     })
 
@@ -78,7 +78,7 @@ describe('date.js', () => {
         expect(() => {
           const date = ''
           getYear(date)
-        }).toThrow('Invalid date parameters')
+        }).toThrow('Invalid date parameter')
       })
     })
 
@@ -93,7 +93,7 @@ describe('date.js', () => {
         expect(() => {
           const date = ''
           getDateToWords(date)
-        }).toThrow('Invalid date parameters')
+        }).toThrow('Invalid date parameter')
       })
     })
 
@@ -108,7 +108,7 @@ describe('date.js', () => {
         expect(() => {
           const date = ''
           getYearToWords(date)
-        }).toThrow('Invalid date parameters')
+        }).toThrow('Invalid date parameter')
       })
     })
   })
@@ -133,7 +133,7 @@ describe('date.js', () => {
 
         expect(() => {
           randomDateBetween(min, max)
-        }).toThrow('Invalid date parameters')
+        }).toThrow('Invalid date parameter')
       })
     })
   })

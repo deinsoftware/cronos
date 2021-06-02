@@ -4,25 +4,19 @@ import Nav from '../../Nav/Nav'
 import Listen from '../../Shared/Listen'
 import Answer from '../../Shared/Answer'
 
-import {
-  addYear,
-  getYearToWords,
-  randomDateBetween,
-  getYear,
-} from '../../../utils/date'
+import { getTimeToWords, randomTime } from '../../../utils/time'
 
 import '../Pages.css'
 
-const YearToWords = () => {
-  const [date, setDate] = useState(new Date())
+const TimeToWords = () => {
+  const initialTime = { hour: 1, minutes: 0 }
+  const [time, setTime] = useState(initialTime)
   const [words, setWords] = useState('')
 
   const handleRandom = () => {
-    const min = new Date(1800, 0, 1)
-    const max = addYear(100, new Date())
-    const value = randomDateBetween(min, max)
+    const value = randomTime()
 
-    setDate(value)
+    setTime(value)
     setWords('')
   }
 
@@ -31,25 +25,27 @@ const YearToWords = () => {
   }, [])
 
   useEffect(() => {
-    const result = getYearToWords(date)
+    const result = getTimeToWords(time)
     setWords(result)
-  }, [date])
+  }, [time])
 
   return (
     <>
-      <Nav text="Year to Words"></Nav>
+      <Nav text="Time to Words"></Nav>
 
       <section>
-        <div className="challenge">{getYear(date)}</div>
+        <div className="challenge">{`${time.hour}:${String(
+          time.minutes
+        ).padStart(2, '0')}`}</div>
         <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>
           <Listen text={words}></Listen>
         </div>
 
-        <Answer words={words}></Answer>
+        <Answer words={words} rows={2}></Answer>
       </section>
     </>
   )
 }
 
-export default YearToWords
+export default TimeToWords
