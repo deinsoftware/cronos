@@ -1,8 +1,8 @@
-import Header from './components/Header/Header'
+import Header from '../../sections/Header/Header'
 import Routes from './Routes.jsx'
-import Footer from './components/Footer/Footer'
+import Footer from '../../sections/Footer/Footer'
 
-function App() {
+function Landing() {
   return (
     <>
       <Header />
@@ -14,4 +14,4 @@ function App() {
   )
 }
 
-export default App
+export default Landing

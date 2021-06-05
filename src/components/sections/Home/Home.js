@@ -1,5 +1,5 @@
-import Menu from '../Menu/Menu'
-import Nav from '../Nav/Nav'
+import Menu from '../../ui/Menu/Menu'
+import Nav from '../../ui/Nav/Nav'
 
 const Home = () => {
   return (

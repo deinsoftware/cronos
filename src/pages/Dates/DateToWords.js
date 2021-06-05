@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 
-import Nav from '../../Nav/Nav'
-import Listen from '../../Shared/Listen'
-import Answer from '../../Shared/Answer'
+import Nav from '../../components/ui/Nav/Nav'
+import Listen from '../../components/shared/Listen/Listen'
+import Answer from '../../components/shared/Answer/Answer'
 
 import {
   addYear,
-  getYearToWords,
+  getDateToWords,
   randomDateBetween,
-  getYear,
-} from '../../../utils/date'
+  formatDate,
+} from '../../utils/date'
 
 import '../Pages.css'
 
-const YearToWords = () => {
+const DateToWords = () => {
   const [date, setDate] = useState(new Date())
   const [words, setWords] = useState('')
 
@@ -31,25 +31,25 @@ const YearToWords = () => {
   }, [])
 
   useEffect(() => {
-    const result = getYearToWords(date)
+    const result = getDateToWords(date)
     setWords(result)
   }, [date])
 
   return (
     <>
-      <Nav text="Year to Words"></Nav>
+      <Nav text="Date to Words"></Nav>
 
       <section>
-        <div className="challenge">{getYear(date)}</div>
+        <div className="challenge">{formatDate(date)}</div>
         <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>
           <Listen text={words}></Listen>
         </div>
 
-        <Answer words={words}></Answer>
+        <Answer words={words} rows={2}></Answer>
       </section>
     </>
   )
 }
 
-export default YearToWords
+export default DateToWords

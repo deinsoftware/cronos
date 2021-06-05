@@ -4,10 +4,10 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Home from './components/Home/Home';
-import NotFound from './components/NotFound/NotFound';
+import Home from '../../sections/Home/Home';
+import NotFound from '../../sections/NotFound/NotFound';
 
-import {menuOptions} from './data/menu'
+import {menuOptions} from '../../../data/menu'
 
 const Routes = () => {
   return (

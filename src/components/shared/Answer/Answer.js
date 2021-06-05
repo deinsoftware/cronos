@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
 import { useEffect, useState } from 'react'
-import { compareText, capitalize } from '../../utils/text'
-import { answerResult } from '../../data/list'
+import { compareText, capitalize } from '../../../utils/text'
+import { answerResult } from '../../../data/list'
 
 import './Answer.css'
 

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-import small from '../../assets/error/404-320w.png'
-import medium from '../../assets/error/404-480w.png'
-import large from '../../assets/error/404-720w.png'
+import small from '../../../assets/error/404-320w.png'
+import medium from '../../../assets/error/404-480w.png'
+import large from '../../../assets/error/404-720w.png'
 
 import './NotFound.css'
 

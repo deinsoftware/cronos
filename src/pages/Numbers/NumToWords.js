@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
 import converter from 'number-to-words'
 
-import Nav from '../../Nav/Nav'
-import Listen from '../../Shared/Listen'
-import Answer from '../../Shared/Answer'
+import Nav from '../../components/ui/Nav/Nav'
+import Listen from '../../components/shared/Listen/Listen'
+import Answer from '../../components/shared/Answer/Answer'
 
-import { placeValues, numberTypes } from '../../../data/list'
+import { placeValues, numberTypes } from '../../data/list'
 import {
   formatOrdinal,
   formatCardinal,
   randomPlaces,
-} from '../../../utils/numbers'
-import { capitalize } from '../../../utils/text'
+} from '../../utils/numbers'
+import { capitalize } from '../../utils/text'
 
 import '../Pages.css'
 

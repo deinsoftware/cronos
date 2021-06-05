@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
-import Nav from '../../Nav/Nav'
-import Listen from '../../Shared/Listen'
-import Answer from '../../Shared/Answer'
+import Nav from '../../components/ui/Nav/Nav'
+import Listen from '../../components/shared/Listen/Listen'
+import Answer from '../../components/shared/Answer/Answer'
 
-import { getTimeToWords, randomTime } from '../../../utils/time'
+import { getTimeToWords, randomTime } from '../../utils/time'
 
 import '../Pages.css'
 

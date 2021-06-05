@@ -1,7 +1,7 @@
-import NumToWords from '../components/Pages/Numbers/NumToWords'
-import YearToWords from '../components/Pages/Dates/YearToWords'
-import DateToWords from '../components/Pages/Dates/DateToWords'
-import TimeToWords from '../components/Pages/Times/TimeToWords'
+import NumToWords from '../pages/Numbers/NumToWords'
+import YearToWords from '../pages/Dates/YearToWords'
+import DateToWords from '../pages/Dates/DateToWords'
+import TimeToWords from '../pages/Times/TimeToWords'
 
 export const menuOptions = [
   { path: 'n2w', component: NumToWords, text: 'Number to Words' },

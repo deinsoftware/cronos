@@ -3,15 +3,15 @@ import { Router } from 'react-router-dom'
 import { render, fireEvent } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 
-import { menuOptions } from './data/menu'
+import { menuOptions } from '../../../data/menu'
 
-import App from './App'
+import Landing from './Landing'
 
-describe('App.js', () => {
-  describe('App Component', () => {
+describe('Landing.js', () => {
+  describe('Landing Component', () => {
     it('should render without crashing', () => {
       const div = document.createElement('div')
-      ReactDOM.render(<App />, div)
+      ReactDOM.render(<Landing />, div)
       ReactDOM.unmountComponentAtNode(div)
     })
   })
@@ -25,7 +25,7 @@ describe('App.js', () => {
     }
 
     it('should render the <Home/> page', () => {
-      const { container, getByTestId } = renderWithRouter(<App />)
+      const { container, getByTestId } = renderWithRouter(<Landing />)
       const title = 'What would you like to practice?'
       expect(container.innerHTML).toMatch(title)
 
@@ -40,7 +40,7 @@ describe('App.js', () => {
         /\s/g,
         ''
       )}/> page`, () => {
-        const { container, getByTestId } = renderWithRouter(<App />)
+        const { container, getByTestId } = renderWithRouter(<Landing />)
         const link = getByTestId(`${menu.path}-link`)
         fireEvent.click(link)
 

@@ -18,6 +18,7 @@
   - [Prerequisites](#prerequisites)
   - [Development](#development)
   - [Run](#run)
+- [Folder Structure](#folder-structure)
 - [About](#about)
   - [Built With](#built-with)
   - [Contributing](#contributing)
@@ -60,6 +61,39 @@ npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits. You will also see any lint errors in the console.
+
+⇧ [Back to menu](#menu)
+
+---
+
+## Folder Structure
+
+```bash
+├─ public
+├─ src
+    └─ components
+        └─ layouts
+        └─ sections
+        └─ shared
+        └─ ui
+    └─ data
+    └─ utils
+    └─ pages
+    └─ App.js
+    └─ index.js
+```
+
+| Folder   | Content                                                                                                            |
+| -------- | ------------------------------------------------------------------------------------------------------------------ |
+| layouts  | includes the layout for our main pages (eg. LandingLayout, AuthLayout)                                             |
+| sections | all the sections (eg. Header, Footer)                                                                              |
+| shared   | all the shared components that have business logic (eg. Answer, Listen)                                            |
+| ui       | all the smaller components that have no business logic or side effects (eg. Logo, Button)                          |
+| data     | The data folder includes all the share CONSTANT (eg. combobox list).                                               |
+| utils    | The utils folder includes all the function helpers (eg. helpers).                                                  |
+| pages    | In the pages folder, you can place all the pages of our landing page (e.g. Home, About, SignUp, Login), and so on. |
+
+A rule of thumb is to create a helper function when you need specific functionalities in more than one place.
 
 ⇧ [Back to menu](#menu)
 

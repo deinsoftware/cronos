@@ -1,7 +1,7 @@
 import './Header.css'
 
-import logoSvg from '../../assets/logo/logo.svg'
-import logoPng from '../../assets/logo/logo.png'
+import logoSvg from '../../../assets/logo/logo.svg'
+import logoPng from '../../../assets/logo/logo.png'
 
 const Header = () => {
   return (
