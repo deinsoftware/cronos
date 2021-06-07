@@ -4,6 +4,7 @@ describe('list.js', () => {
   describe('placeValues', () => {
     test('id should match', () => {
       const id = 1
+
       expect(placeValues[id]).toEqual('ones')
     })
   })
@@ -11,6 +12,7 @@ describe('list.js', () => {
   describe('numberTypes', () => {
     test('id should match', () => {
       const id = 'c'
+
       expect(numberTypes[id]).toEqual('cardinal')
     })
   })
@@ -18,6 +20,7 @@ describe('list.js', () => {
   describe('answerResult', () => {
     test('id should match', () => {
       const id = 'c'
+
       expect(answerResult[id]).toEqual('correct')
     })
   })

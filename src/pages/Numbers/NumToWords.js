@@ -4,7 +4,6 @@ import converter from 'number-to-words'
 import Nav from '../../components/ui/Nav/Nav'
 import Listen from '../../components/shared/Listen/Listen'
 import Answer from '../../components/shared/Answer/Answer'
-
 import { placeValues, numberTypes } from '../../data/list'
 import {
   formatOrdinal,
@@ -31,6 +30,7 @@ const NumToWords = () => {
 
   const handleRandom = () => {
     const value = randomPlaces(places)
+
     setNumber(value)
     setWords('')
   }
@@ -45,17 +45,19 @@ const NumToWords = () => {
 
   useEffect(() => {
     let method = 'toWords'
+
     if (type === 'o') {
       method += 'Ordinal'
     }
 
     const result = converter[method](number)
+
     setWords(result)
   }, [number])
 
   return (
     <>
-      <Nav text="Number to Words"></Nav>
+      <Nav text="Number to Words" />
 
       <section>
         <div className="input-group">
@@ -84,9 +86,9 @@ const NumToWords = () => {
         </div>
         <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>
-          <Listen text={words}></Listen>
+          <Listen text={words} />
         </div>
-        <Answer words={words} rows={4}></Answer>
+        <Answer rows={4} words={words} />
       </section>
     </>
   )

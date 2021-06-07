@@ -6,20 +6,19 @@ import {
 
 import Home from '../../sections/Home/Home';
 import NotFound from '../../sections/NotFound/NotFound';
-
 import {menuOptions} from '../../../data/menu'
 
 const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact component={Home} path="/" />
         {menuOptions.map((menu) => (
           <Route
             key={menu.path}
             exact
-            path={`/${menu.path}`}
             component={menu.component}
+            path={`/${menu.path}`}
           />
         ))}
         <Route component={NotFound} />

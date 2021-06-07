@@ -7,6 +7,7 @@ describe('text.js', () => {
         const first = 'Test'
         const second = 'test'
         const result = compareText(first, second)
+
         expect(result).toBe(true)
       })
 
@@ -14,6 +15,7 @@ describe('text.js', () => {
         const first = 'Test'
         const second = 'Tests'
         const result = compareText(first, second)
+
         expect(result).toBe(false)
       })
     })
@@ -24,17 +26,20 @@ describe('text.js', () => {
       test('should return the word capitalized', () => {
         const text = 'test'
         const result = capitalize(text)
+
         expect(result).toBe('Test')
       })
 
       test('should return each word capitalized', () => {
         const text = 'test multiple words'
         const result = capitalize(text)
+
         expect(result).toBe('Test Multiple Words')
       })
 
       test('should return empty when has no parameters', () => {
         const result = capitalize()
+
         expect(result).toBe('')
       })
     })

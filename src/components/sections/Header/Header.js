@@ -1,15 +1,14 @@
 import './Header.css'
-
-import logoSvg from '../../../assets/logo/logo.svg'
-import logoPng from '../../../assets/logo/logo.png'
+import Picture from '../../ui/Picture/Picture'
 
 const Header = () => {
   return (
     <header>
-      <picture>
-        <source type="image/svg+xml" srcSet={logoSvg} />
-        <img src={logoPng} alt="logo" />
-      </picture>
+      <Picture
+        alt="Cronos Logo"
+        src="logo/logo"
+        types={['svg', 'avif', 'webp', 'png']}
+      />
     </header>
   )
 }

@@ -4,13 +4,13 @@ import { render, fireEvent } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 
 import { menuOptions } from '../../../data/menu'
-
 import Landing from './Landing'
 
 describe('Landing.js', () => {
   describe('Landing Component', () => {
     it('should render without crashing', () => {
       const div = document.createElement('div')
+
       ReactDOM.render(<Landing />, div)
       ReactDOM.unmountComponentAtNode(div)
     })
@@ -19,6 +19,7 @@ describe('Landing.js', () => {
   describe('Router', () => {
     const renderWithRouter = (component) => {
       const history = createMemoryHistory()
+
       return {
         ...render(<Router history={history}>{component}</Router>),
       }
@@ -27,11 +28,14 @@ describe('Landing.js', () => {
     it('should render the <Home/> page', () => {
       const { container, getByTestId } = renderWithRouter(<Landing />)
       const title = 'What would you like to practice?'
+
       expect(container.innerHTML).toMatch(title)
 
       const home = getByTestId('home')
+
       expect(container).toContainElement(home)
       const menu = getByTestId('menu')
+
       expect(home).toContainElement(menu)
     })
 
@@ -42,12 +46,15 @@ describe('Landing.js', () => {
       )}/> page`, () => {
         const { container, getByTestId } = renderWithRouter(<Landing />)
         const link = getByTestId(`${menu.path}-link`)
+
         fireEvent.click(link)
 
         const title = `${menu.text}`
+
         expect(container.innerHTML).toMatch(title)
 
         const homeLink = getByTestId('home-link')
+
         expect(container).toContainElement(homeLink)
         fireEvent.click(homeLink)
       })

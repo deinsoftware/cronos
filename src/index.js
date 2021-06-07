@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import Landing from './components/layouts/Landing/Landing'
 
 import './index.css'

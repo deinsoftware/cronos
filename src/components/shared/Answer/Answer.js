@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-
 import { useEffect, useState } from 'react'
+
 import { compareText, capitalize } from '../../../utils/text'
 import { answerResult } from '../../../data/list'
 
@@ -12,6 +12,7 @@ const Answer = ({ words, rows }) => {
   const handleAnswer = (event) => {
     event.preventDefault()
     const result = compareText(solution, words) ? 'c' : 'w'
+
     setAnswer(result)
   }
 
@@ -37,23 +38,23 @@ const Answer = ({ words, rows }) => {
           </div>
           <div className="input-group">
             <textarea
-              name="answer"
-              id="answer"
-              onChange={(e) => handleSolution(e)}
-              value={solution}
-              disabled={answer}
+              autoCapitalize="off"
               autoComplete="off"
               autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck="false"
+              disabled={answer}
+              id="answer"
+              name="answer"
               rows={rows}
+              spellCheck="false"
+              value={solution}
+              onChange={(e) => handleSolution(e)}
             />
           </div>
           <div className="input-group">
             <button
+              disabled={!solution || answer ? true : ''}
               type="submit"
               onClick={handleAnswer}
-              disabled={!solution || answer ? true : ''}
             >
               Answer
             </button>
