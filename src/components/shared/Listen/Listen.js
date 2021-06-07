@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-
 import Speech from 'speak-tts'
 
 const Listen = ({ text }) => {
   const speech = new Speech()
+
   if (speech.hasBrowserSupport()) {
     const options = {
       volume: 1,
@@ -14,7 +14,7 @@ const Listen = ({ text }) => {
     }
 
     speech.init(options).catch((error) => {
-      console.error('An error occurred while initializing : ', error)
+      throw new Error(`An error occurred while initializing : ${error}`)
     })
   }
 

@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import Nav from '../../components/ui/Nav/Nav'
 import Listen from '../../components/shared/Listen/Listen'
 import Answer from '../../components/shared/Answer/Answer'
-
 import {
   addYear,
   getDateToWords,
@@ -32,21 +31,22 @@ const DateToWords = () => {
 
   useEffect(() => {
     const result = getDateToWords(date)
+
     setWords(result)
   }, [date])
 
   return (
     <>
-      <Nav text="Date to Words"></Nav>
+      <Nav text="Date to Words" />
 
       <section>
         <div className="challenge">{formatDate(date)}</div>
         <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>
-          <Listen text={words}></Listen>
+          <Listen text={words} />
         </div>
 
-        <Answer words={words} rows={2}></Answer>
+        <Answer rows={2} words={words} />
       </section>
     </>
   )

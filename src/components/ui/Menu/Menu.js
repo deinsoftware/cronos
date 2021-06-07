@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+
 import { menuOptions } from '../../../data/menu'
 
 import './Menu.css'

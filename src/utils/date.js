@@ -4,6 +4,7 @@ export const isValidDate = (date) => {
   if (!date) {
     return false
   }
+
   return !Number.isNaN(date.valueOf())
 }
 
@@ -16,6 +17,7 @@ export const addYear = (amount = 1, date = new Date()) => {
   }
 
   const year = date.getFullYear() + amount
+
   return new Date(date.setFullYear(year))
 }
 
@@ -41,6 +43,7 @@ export const getYearToWords = (date) => {
   }
 
   const words = dateToWords(date)
+
   return words.split(',')[1].trim()
 }
 

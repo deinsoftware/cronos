@@ -4,7 +4,7 @@ import Nav from '../../ui/Nav/Nav'
 const Home = () => {
   return (
     <div data-testid="home">
-      <Nav back={false} text="What would you like to practice?"></Nav>
+      <Nav back={false} text="What would you like to practice?" />
 
       <Menu />
     </div>

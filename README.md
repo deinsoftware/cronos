@@ -71,6 +71,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 ```bash
 ├─ public
 ├─ src
+    └─ assets
     └─ components
         └─ layouts
         └─ sections
@@ -85,6 +86,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 | Folder   | Content                                                                                                            |
 | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| assets   | includes the images and file resources                                                                             |
 | layouts  | includes the layout for our main pages (eg. LandingLayout, AuthLayout)                                             |
 | sections | all the sections (eg. Header, Footer)                                                                              |
 | shared   | all the shared components that have business logic (eg. Answer, Listen)                                            |

@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import small from '../../../assets/error/404-320w.png'
-import medium from '../../../assets/error/404-480w.png'
-import large from '../../../assets/error/404-720w.png'
+import Picture from '../../ui/Picture/Picture'
 
 import './NotFound.css'
 
@@ -14,14 +12,12 @@ const NotFound = () => {
           <h1>OPS! PAGE NOT FOUND</h1>
         </div>
 
-        <img
-          srcSet={`
-             ${small} 320w,
-             ${medium} 480w,
-             ${large} 720w`}
-          src={small}
+        <Picture
           alt="Page Not Found"
-        ></img>
+          sizes={[320, 480, 720]}
+          src="error/404"
+          types={['avif', 'webp', 'png']}
+        />
 
         <Link data-testid="home-link" to="/">
           Go Home!

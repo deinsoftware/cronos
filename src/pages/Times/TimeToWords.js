@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import Nav from '../../components/ui/Nav/Nav'
 import Listen from '../../components/shared/Listen/Listen'
 import Answer from '../../components/shared/Answer/Answer'
-
 import { getTimeToWords, randomTime } from '../../utils/time'
 
 import '../Pages.css'
@@ -26,12 +25,13 @@ const TimeToWords = () => {
 
   useEffect(() => {
     const result = getTimeToWords(time)
+
     setWords(result)
   }, [time])
 
   return (
     <>
-      <Nav text="Time to Words"></Nav>
+      <Nav text="Time to Words" />
 
       <section>
         <div className="challenge">{`${time.hour}:${String(
@@ -39,10 +39,10 @@ const TimeToWords = () => {
         ).padStart(2, '0')}`}</div>
         <div className="input-group">
           <button onClick={handleRandom}>Refresh</button>
-          <Listen text={words}></Listen>
+          <Listen text={words} />
         </div>
 
-        <Answer words={words} rows={2}></Answer>
+        <Answer rows={2} words={words} />
       </section>
     </>
   )
