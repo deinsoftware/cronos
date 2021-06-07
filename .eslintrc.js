@@ -37,7 +37,7 @@ module.exports = {
             position: 'after',
           },
         ],
-        'newlines-between': 'always',
+        'newlines-between': 'always-and-inside-groups',
       },
     ],
     'react/jsx-sort-props': [
