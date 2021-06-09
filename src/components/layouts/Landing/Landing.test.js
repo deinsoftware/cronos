@@ -1,18 +1,20 @@
 import ReactDOM from 'react-dom'
 import { Router } from 'react-router-dom'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 
 import { menuOptions } from '../../../data/menu'
 import Landing from './Landing'
 
 describe('Landing.js', () => {
-  describe('Landing Component', () => {
-    it('should render without crashing', () => {
-      const div = document.createElement('div')
+  describe('<Landing/> Component', () => {
+    it('should render without crashing', async () => {
+      await act(async () => {
+        const div = document.createElement('div')
 
-      ReactDOM.render(<Landing />, div)
-      ReactDOM.unmountComponentAtNode(div)
+        ReactDOM.render(<Landing />, div)
+        ReactDOM.unmountComponentAtNode(div)
+      })
     })
   })
 
@@ -25,29 +27,33 @@ describe('Landing.js', () => {
       }
     }
 
-    it('should render the <Home/> page', () => {
-      const { container, getByTestId } = renderWithRouter(<Landing />)
-      const title = 'What would you like to practice?'
+    it('should render the <Home/> page', async () => {
+      await act(async () => {
+        const { container, getByTestId } = renderWithRouter(<Landing />)
+        const title = 'What would you like to practice?'
 
-      expect(container.innerHTML).toMatch(title)
+        expect(container.innerHTML).toMatch(title)
 
-      const home = getByTestId('home')
+        const home = getByTestId('home')
 
-      expect(container).toContainElement(home)
-      const menu = getByTestId('menu')
+        expect(container).toContainElement(home)
+        const menu = getByTestId('menu')
 
-      expect(home).toContainElement(menu)
+        expect(home).toContainElement(menu)
+      })
     })
 
     for (const menu of menuOptions) {
       it(`should navigate to the <${menu.text.replace(
         /\s/g,
         ''
-      )}/> page`, () => {
+      )}/> page`, async () => {
         const { container, getByTestId } = renderWithRouter(<Landing />)
         const link = getByTestId(`${menu.path}-link`)
 
-        fireEvent.click(link)
+        await act(async () => {
+          fireEvent.click(link)
+        })
 
         const title = `${menu.text}`
 

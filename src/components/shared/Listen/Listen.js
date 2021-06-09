@@ -14,7 +14,7 @@ const Listen = ({ text }) => {
     }
 
     speech.init(options).catch((error) => {
-      throw new Error(`An error occurred while initializing : ${error}`)
+      throw new Error(`An error occurred while initializing: ${error}`)
     })
   }
 
