@@ -1,11 +1,11 @@
-const { answerResult, numberTypes, placeValues } = require('./list')
+const { answerResult, numberTypes, PLACE_VALUES } = require('./list')
 
 describe('list.js', () => {
-  describe('placeValues', () => {
+  describe('PLACE_VALUES', () => {
     test('id should match', () => {
       const id = 1
 
-      expect(placeValues[id]).toEqual('ones')
+      expect(PLACE_VALUES[id]).toEqual('ones')
     })
   })
 

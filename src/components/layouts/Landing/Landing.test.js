@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom'
 import { render, fireEvent, act } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
 
-import { menuOptions } from '../../../data/menu'
+import { MENU_OPTIONS } from '../../../data/menu'
 import Landing from './Landing'
 
 describe('Landing.js', () => {
@@ -43,7 +43,7 @@ describe('Landing.js', () => {
       })
     })
 
-    for (const menu of menuOptions) {
+    for (const menu of MENU_OPTIONS) {
       it(`should navigate to the <${menu.text.replace(
         /\s/g,
         ''

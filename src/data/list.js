@@ -1,4 +1,4 @@
-export const placeValues = {
+export const PLACE_VALUES = {
   1: 'ones',
   10: 'tens',
   100: 'hundreds',

@@ -1,6 +1,6 @@
 import useLoadImage from '../../../hooks/Images/useLoadImage'
 import useLoadScrSet from '../../../hooks/Images/useLoadScrSet'
-import { imageType } from '../../../data/images'
+import { IMAGE_TYPE } from '../../../data/images'
 
 const Source = ({ src, type, sizes }) => {
   return (
@@ -8,12 +8,12 @@ const Source = ({ src, type, sizes }) => {
       {!sizes?.length ? (
         <source
           src={useLoadImage(src, type)}
-          type={`image/${imageType[type] || type}`}
+          type={`image/${IMAGE_TYPE[type] || type}`}
         />
       ) : (
         <source
           srcSet={useLoadScrSet(src, type, sizes)}
-          type={`image/${imageType[type] || type}`}
+          type={`image/${IMAGE_TYPE[type] || type}`}
         />
       )}
     </>

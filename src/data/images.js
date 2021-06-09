@@ -1,3 +1,3 @@
-export const imageType = {
+export const IMAGE_TYPE = {
   svg: 'svg+xml',
 }

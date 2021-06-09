@@ -4,7 +4,7 @@ import converter from 'number-to-words'
 import Nav from '../../components/ui/Nav/Nav'
 import Listen from '../../components/shared/Listen/Listen'
 import Answer from '../../components/shared/Answer/Answer'
-import { placeValues, numberTypes } from '../../data/list'
+import { PLACE_VALUES, numberTypes } from '../../data/list'
 import {
   formatOrdinal,
   formatCardinal,
@@ -63,7 +63,7 @@ const NumToWords = () => {
         <div className="input-group">
           <label htmlFor="level">Level</label>
           <select name="level" value={places} onChange={(e) => handlePlaces(e)}>
-            {Object.entries(placeValues).map((value, index) => (
+            {Object.entries(PLACE_VALUES).map((value, index) => (
               <option key={value[0]} value={value[0]}>
                 {`${index + 1} - ${capitalize(value[1])}`}
               </option>
