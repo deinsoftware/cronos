@@ -70,30 +70,29 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 ```bash
 ├─ public
-├─ src
-    └─ assets
-    └─ components
-        └─ layouts
-        └─ sections
-        └─ shared
-        └─ ui
-    └─ data
-    └─ utils
-    └─ pages
-    └─ App.js
+└─ src
+    ├─ assets
+    ├─ components
+    │   ├─ layouts
+    │   ├─ sections
+    │   ├─ shared
+    │   └─ ui
+    ├─ data
+    ├─ utils
+    ├─ pages
     └─ index.js
 ```
 
-| Folder   | Content                                                                                                            |
-| -------- | ------------------------------------------------------------------------------------------------------------------ |
-| assets   | includes the images and file resources                                                                             |
-| layouts  | includes the layout for our main pages (eg. LandingLayout, AuthLayout)                                             |
-| sections | all the sections (eg. Header, Footer)                                                                              |
-| shared   | all the shared components that have business logic (eg. Answer, Listen)                                            |
-| ui       | all the smaller components that have no business logic or side effects (eg. Logo, Button)                          |
-| data     | The data folder includes all the share CONSTANT (eg. combobox list).                                               |
-| utils    | The utils folder includes all the function helpers (eg. helpers).                                                  |
-| pages    | In the pages folder, you can place all the pages of our landing page (e.g. Home, About, SignUp, Login), and so on. |
+| Folder   | Content                                                                           |
+| -------- | --------------------------------------------------------------------------------- |
+| assets   | Images and file resources                                                         |
+| layouts  | Layout components for main pages (eg. LandingLayout, AuthLayout)                  |
+| sections | Sections components (eg. Header, Footer)                                          |
+| shared   | Shared components that have business logic (eg. Answer, Listen)                   |
+| ui       | Smaller components that have no business logic or side effects (eg. Logo, Button) |
+| data     | Share CONSTANT (eg. combobox list).                                               |
+| utils    | Function helpers (eg. helpers).                                                   |
+| pages    | All the pages                                                                     |
 
 A rule of thumb is to create a helper function when you need specific functionalities in more than one place.
 

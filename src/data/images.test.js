@@ -1,17 +1,17 @@
-const { imageType } = require('./images')
+const { IMAGE_TYPE } = require('./images')
 
 describe('test.js', () => {
-  describe('imageType', () => {
+  describe('IMAGE_TYPE', () => {
     test('id should match', () => {
       const id = 'svg'
 
-      expect(imageType[id]).toEqual('svg+xml')
+      expect(IMAGE_TYPE[id]).toEqual('svg+xml')
     })
 
     test('if id not exist should return anything', () => {
       const id = 'png'
 
-      expect(imageType[id]).toBeUndefined()
+      expect(IMAGE_TYPE[id]).toBeUndefined()
     })
   })
 })

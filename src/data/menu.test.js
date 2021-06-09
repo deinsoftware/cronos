@@ -1,9 +1,9 @@
-const { menuOptions } = require('./menu')
+const { MENU_OPTIONS } = require('./menu')
 
 describe('menu.js', () => {
-  describe('menuOptions', () => {
+  describe('MENU_OPTIONS', () => {
     test('path should match', () => {
-      expect(menuOptions[0].path).toEqual('n2w')
+      expect(MENU_OPTIONS[0].path).toEqual('n2w')
     })
   })
 })

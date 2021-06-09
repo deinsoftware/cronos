@@ -24,11 +24,10 @@
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "test": "react-scripts test",
-    "test:c": "react-scripts test --coverage",
+    "test:c": "react-scripts test --coverage --watchAll=false --ci --findRelatedTests src/**/**.js",
     "test:cw": "react-scripts test --coverage --watchAll",
-    "test:nw": "react-scripts test --coverage --watchAll=false",
     "test:r": "open ./coverage/lcov-report/index.html",
-    "test:u": "jest-coverage-thresholds-bumper",
+    "test:tb": "jest-coverage-thresholds-bumper",
     "lint:l": "eslint .",
     "lint:f": "eslint . --fix",
     "prettier:c": "prettier . --check",
@@ -86,11 +85,11 @@
     "prettier": "2.3.0"
   },
   "lint-staged": {
-    "*": [
-      "jest --bail --findRelatedTests",
-      "jest-coverage-thresholds-bumper"
+    "*.{js,ts}": [
+      "eslint --cache --fix",
+      "npm run test:c",
+      "npm run test:tb"
     ],
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,ts,css,md}": "prettier --write"
   }
 }

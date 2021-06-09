@@ -10,7 +10,7 @@ const Nav = ({ back, text }) => {
         {back && (
           <h1>
             <Link data-testid="home-link" to="/">
-              &lt;
+              ⮜
             </Link>
           </h1>
         )}
