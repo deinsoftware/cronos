@@ -7,6 +7,9 @@
 [![sonar-maintainability](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
 [![sonar-coverage](https://sonarcloud.io/api/project_badges/measure?project=dein%3Acronos&metric=coverage)](https://sonarcloud.io/dashboard?id=dein%3Acronos)
 [![license](https://img.shields.io/github/license/deinsoftware/colorify)](LICENSE.md)
+![Prettier](https://img.shields.io/badge/formatter-prettier-ff69b4.svg?style=flat)
+![ESLint](https://img.shields.io/badge/linter-eslint-7C7CE9.svg?style=flat)
+![React](https://img.shields.io/badge/made_with-react-61DBFB.svg?style=flat)
 
 ![Cronos](.github/social/preview.png 'Cronos App')
 
@@ -136,7 +139,7 @@ If this project helps you, consider buying me a cup of coffee.
 
 [![paypal](https://img.shields.io/badge/-PayPal-gray?style=flat&labelColor=00457C&logo=paypal&logoColor=white&link=https://paypal.me/equiman/3)](https://paypal.me/equiman/3)
 [![patreon](https://img.shields.io/badge/-Patreon-gray?style=flat&labelColor=052d49&logo=patreon&logoColor=F96854&link=https://patreon.com/equiman)](https://patreon.com/equiman)
-[![buymeacoffe](https://img.shields.io/badge/-Buy%20Me%20A%20Coffee-gray?style=flat&labelColor=FF813F&logo=buy-me-a-coffee&logoColor=white&link=https://buymeacoff.ee/equiman)](https://buymeacoff.ee/equiman)
+[![buymeacoffee](https://img.shields.io/badge/-Buy%20Me%20A%20Coffee-gray?style=flat&labelColor=FF813F&logo=buy-me-a-coffee&logoColor=white&link=https://buymeacoff.ee/equiman)](https://buymeacoff.ee/equiman)
 
 ### License
 
