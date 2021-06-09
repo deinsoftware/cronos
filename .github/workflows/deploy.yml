@@ -1,8 +1,9 @@
-name: deploy
+name: push
 
 on:
   workflow_run:
     workflows: ["build"]
+    branches: [main]
     types:
       - completed
 
