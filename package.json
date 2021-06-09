@@ -18,21 +18,21 @@
     "web-vitals": "1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
-    "test": "react-scripts test",
-    "test:c": "react-scripts test --coverage --watchAll=false --ci --findRelatedTests src/**/**.js",
-    "test:cw": "react-scripts test --coverage --watchAll",
-    "test:r": "open ./coverage/lcov-report/index.html",
-    "test:tb": "jest-coverage-thresholds-bumper",
     "lint:l": "eslint .",
     "lint:f": "eslint . --fix",
     "prettier:c": "prettier . --check",
     "prettier:w": "prettier . --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "test:c": "react-scripts test --coverage --watchAll=false --ci --findRelatedTests src/**/**.js",
+    "test:cw": "react-scripts test --coverage --watchAll",
+    "test:r": "open ./coverage/lcov-report/index.html",
+    "test:tb": "jest-coverage-thresholds-bumper"
   },
   "eslintConfig": {
     "extends": [
