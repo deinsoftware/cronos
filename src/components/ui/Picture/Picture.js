@@ -4,7 +4,13 @@ import useLoadImage from '../../../hooks/Images/useLoadImage'
 import Source from './Source'
 
 const Picture = ({ src, types, sizes, alt, className }) => {
-  const defaultSize = sizes[0]
+  let defaultSize = ''
+
+  if (sizes?.length) {
+    const size = sizes[0]
+
+    defaultSize = `-${size}w`
+  }
 
   return (
     <picture>
@@ -15,10 +21,7 @@ const Picture = ({ src, types, sizes, alt, className }) => {
       <img
         alt={alt}
         className={className}
-        src={useLoadImage(
-          `${src}${sizes?.length ? `-${defaultSize}w` : ''}`,
-          'png'
-        )}
+        src={useLoadImage(`${src}${defaultSize}`, 'png')}
       />
     </picture>
   )

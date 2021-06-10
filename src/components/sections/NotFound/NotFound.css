@@ -1,3 +1,17 @@
+html[data-theme='light'] {
+  --border-option: var(--color-blue);
+  --color-option: var(--color-blue);
+  --bg-option: var(--background-white);
+  --hover-option: var(--background-blue);
+}
+
+html[data-theme='dark'] {
+  --border-option: var(--color-white);
+  --color-option: var(--color-white);
+  --bg-option: var(--background-blue);
+  --hover-option: var(--color-blue);
+}
+
 .not-found {
   margin: 0 auto;
   padding: 0;
@@ -17,12 +31,12 @@
   padding: 0.5em 0;
   font-size: 1.2em;
   width: 90%;
-  border: 0.25em solid var(--color-blue);
+  border: 0.25em solid var(--border-option);
   border-radius: 0.25em;
   cursor: pointer;
   font-weight: bold;
-  color: var(--color-blue);
-  background-color: var(--background-white);
+  color: var(--color-option);
+  background-color: var(--bg-option);
 }
 
 .not-found img {
@@ -41,5 +55,5 @@
 }
 
 .not-found a:hover {
-  background-color: var(--background-blue);
+  background-color: var(--hover-option);
 }

@@ -51,10 +51,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 89.02,
+        "statements": 89.15,
         "branches": 80.19,
         "functions": 81.01,
-        "lines": 88.93
+        "lines": 89.06
       }
     }
   },
@@ -86,11 +86,12 @@
     "prettier": "2.3.0"
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --cache --fix",
       "npm run test:c",
-      "npm run test:tb"
+      "npm run test:tb",
+      "git add package.json"
     ],
-    "*.{js,ts,css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }
