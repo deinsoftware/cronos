@@ -7,7 +7,7 @@ const Source = ({ src, type, sizes }) => {
     <>
       {!sizes?.length ? (
         <source
-          src={useLoadImage(src, type)}
+          srcSet={useLoadImage(src, type)}
           type={`image/${IMAGE_TYPE[type] || type}`}
         />
       ) : (

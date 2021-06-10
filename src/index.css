@@ -18,10 +18,22 @@
   --background-warning: rgba(255, 193, 7, 0.2);
 }
 
+html[data-theme='light'] {
+  --bg-color: rgb(255, 255, 255);
+  --color: rgb(0, 0, 0);
+}
+
+html[data-theme='dark'] {
+  --bg-color: rgb(21, 32, 43);
+  --color: rgb(255, 255, 255);
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  background: var(--bg-color);
+  color: var(--color);
 }
 
 body {
