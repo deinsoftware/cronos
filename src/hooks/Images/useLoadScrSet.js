@@ -11,7 +11,7 @@ const useLoadScrSet = (src, type = 'png', sizes = []) => {
         .then((image) => {
           const set = `${image.default} ${size}w`
 
-          setSourceSet((sourceSet) => [...sourceSet, set])
+          setSourceSet((srcset) => [...srcset, set])
         })
         .catch((error) => {
           throw new Error(`An error occurred loading srcset: ${error}`)

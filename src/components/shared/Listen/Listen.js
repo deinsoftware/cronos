@@ -19,7 +19,6 @@ const Listen = ({ text }) => {
   }
 
   const handleSpeech = async () => {
-    // TODO: disable button while is working
     await speech.speak({
       text: text,
     })
