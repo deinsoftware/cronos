@@ -1,2 +1,0 @@
-(this.webpackJsonpcronos=this.webpackJsonpcronos||[]).push([[15],{59:function(s,t,c){"use strict";c.r(t),t.default=c.p+"static/media/404-720w.11393e6e.png"}}]);
-//# sourceMappingURL=15.e09edd89.chunk.js.map
