@@ -86,12 +86,12 @@
     "prettier": "2.3.0"
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --cache --fix",
       "npm run test:c",
       "npm run test:tb",
       "git add package.json"
     ],
-    "*.{js,ts,css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }
