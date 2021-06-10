@@ -2,11 +2,21 @@ import ReactDOM from 'react-dom'
 import { Router } from 'react-router-dom'
 import { render, fireEvent, act } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
+import MatchMediaMock from 'jest-matchmedia-mock'
 
 import { MENU_OPTIONS } from '../../../data/menu'
 import Landing from './Landing'
 
+let matchMedia
+
 describe('Landing.js', () => {
+  beforeAll(() => {
+    matchMedia = new MatchMediaMock()
+    const mediaQuery = '(prefers-color-scheme: light)'
+
+    window.matchMedia(mediaQuery)
+  })
+
   describe('<Landing/> Component', () => {
     it('should render without crashing', async () => {
       await act(async () => {
@@ -49,6 +59,7 @@ describe('Landing.js', () => {
         ''
       )}/> page`, async () => {
         const { container, getByTestId } = renderWithRouter(<Landing />)
+
         const link = getByTestId(`${menu.path}-link`)
 
         await act(async () => {
@@ -65,5 +76,9 @@ describe('Landing.js', () => {
         fireEvent.click(homeLink)
       })
     }
+
+    afterEach(() => {
+      matchMedia.clear()
+    })
   })
 })
