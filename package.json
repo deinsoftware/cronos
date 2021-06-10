@@ -51,10 +51,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 0,
-        "branches": 0,
-        "functions": 0,
-        "lines": 0
+        "statements": 89.15,
+        "branches": 80.19,
+        "functions": 81.01,
+        "lines": 89.06
       }
     }
   },
@@ -90,7 +90,7 @@
       "eslint --cache --fix",
       "npm run test:c",
       "npm run test:tb",
-      "git commit package.json -m 'Update Threshold'"
+      "git add package.json"
     ],
     "*.{js,ts,css,md}": "prettier --write"
   }
