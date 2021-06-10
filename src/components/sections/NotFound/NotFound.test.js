@@ -17,7 +17,7 @@ describe('NotFound.js', () => {
     it('should render the <NotFound/> page', async () => {
       await act(async () => {
         const { container, getByTestId } = renderWithRouter(<NotFound />)
-        const title = 'OPS! PAGE NOT FOUND'
+        const title = 'OOPSY!'
 
         expect(container.innerHTML).toMatch(title)
 

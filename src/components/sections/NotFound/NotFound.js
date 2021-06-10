@@ -9,7 +9,7 @@ const NotFound = () => {
     <>
       <div className="not-found" data-testid="not-found">
         <div>
-          <h1>OPS! PAGE NOT FOUND</h1>
+          <h1>OOPSY!</h1>
         </div>
 
         <Picture
