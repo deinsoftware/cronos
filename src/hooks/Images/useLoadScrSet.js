@@ -1,25 +1,61 @@
 import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
-const useLoadScrSet = (src, type = 'png', sizes = []) => {
-  const [sourceSet, setSourceSet] = useState([])
+const useLoadScrSet = (src, type, sizes) => {
+  const [set, setSet] = useState([])
+  const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    for (const size of sizes) {
-      const filePath = `${src}-${size}w.${type}`
+    const fetchImage = async (filePath, size = '') => {
+      setIsLoading(true)
 
-      import(`${process.env.REACT_APP_ASSETS}/${filePath}`)
-        .then((image) => {
-          const set = `${image.default} ${size}w`
+      try {
+        const { default: image } = await import(
+          `${process.env.REACT_APP_ASSETS}/${filePath}`
+        )
 
-          setSourceSet((srcset) => [...srcset, set])
-        })
-        .catch((error) => {
-          throw new Error(`An error occurred loading srcset: ${error}`)
-        })
+        if (size) {
+          size = ` ${size}w`
+        }
+
+        const set = `${image}${size}`
+
+        setSet((srcset) => [...srcset, set])
+      } catch (error) {
+        setError(error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    if (!sizes?.length) {
+      fetchImage(`${src}.${type}`)
+    } else {
+      for (const size of sizes) {
+        fetchImage(`${src}-${size}w.${type}`, size)
+      }
+    }
+
+    return () => {
+      setSet('')
+      setError('')
+      setIsLoading(false)
     }
   }, [src])
 
-  return sourceSet.join(',')
+  return { srcset: set, error, isLoading }
+}
+
+useLoadScrSet.propTypes = {
+  src: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  sizes: PropTypes.array,
+}
+
+useLoadScrSet.defaultProps = {
+  type: 'png',
+  sizes: [],
 }
 
 export default useLoadScrSet

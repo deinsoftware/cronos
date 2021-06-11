@@ -26,7 +26,7 @@ describe('Nav.js', () => {
     it('should render the <Nav/> component without back link', async () => {
       const { container } = renderWithRouter(<Nav back={false} text={title} />)
 
-      const backSymbol = '⮜'
+      const backSymbol = '&lt;'
 
       expect(container.innerHTML).not.toMatch(backSymbol)
     })

@@ -1,18 +1,14 @@
-import useLoadImage from '../../../hooks/Images/useLoadImage'
 import useLoadScrSet from '../../../hooks/Images/useLoadScrSet'
 import { IMAGE_TYPE } from '../../../data/images'
 
 const Source = ({ src, type, sizes }) => {
+  const { srcset, isLoading } = useLoadScrSet(src, type, sizes)
+
   return (
     <>
-      {!sizes?.length ? (
+      {!isLoading && (
         <source
-          srcSet={useLoadImage(src, type)}
-          type={`image/${IMAGE_TYPE[type] || type}`}
-        />
-      ) : (
-        <source
-          srcSet={useLoadScrSet(src, type, sizes)}
+          srcSet={srcset.join(',')}
           type={`image/${IMAGE_TYPE[type] || type}`}
         />
       )}

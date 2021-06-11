@@ -8,7 +8,7 @@
     "files.exclude": {
         "**/*.js.map": {
             "when": "$(basename)"
-        },
+        }
     },
     "html.autoClosingTags": true,
     "javascript.autoClosingTags": true,
@@ -28,6 +28,7 @@
         "lcov",
         "patreon",
         "paypal",
+        "rerender",
         "sonarcloud",
         "sonarsource",
         "testid"

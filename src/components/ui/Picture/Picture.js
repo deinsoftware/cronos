@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
-import useLoadImage from '../../../hooks/Images/useLoadImage'
 import Source from './Source'
+import useLoadScrSet from '../../../hooks/Images/useLoadScrSet'
 
 const Picture = ({ src, types, sizes, alt, className }) => {
   let defaultSize = ''
@@ -12,18 +12,20 @@ const Picture = ({ src, types, sizes, alt, className }) => {
     defaultSize = `-${size}w`
   }
 
-  return (
-    <picture>
-      {types.map((type) => (
-        <Source key={type} sizes={sizes} src={src} type={type} />
-      ))}
+  const { srcset, isLoading } = useLoadScrSet(`${src}${defaultSize}`, 'png')
 
-      <img
-        alt={alt}
-        className={className}
-        src={useLoadImage(`${src}${defaultSize}`, 'png')}
-      />
-    </picture>
+  return (
+    <>
+      {!isLoading && (
+        <picture>
+          {types.map((type) => (
+            <Source key={type} sizes={sizes} src={src} type={type} />
+          ))}
+
+          <img alt={alt} className={className} src={srcset} />
+        </picture>
+      )}
+    </>
   )
 }
 
