@@ -51,10 +51,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 89.15,
-        "branches": 80.19,
-        "functions": 81.01,
-        "lines": 89.06
+        "statements": 90.23,
+        "branches": 84.11,
+        "functions": 82.43,
+        "lines": 90.15
       }
     }
   },
@@ -71,6 +71,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "7.0.0",
     "eslint": "7.26.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.2",

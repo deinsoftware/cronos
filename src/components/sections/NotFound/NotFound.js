@@ -11,14 +11,12 @@ const NotFound = () => {
         <div>
           <h1>OOPSY!</h1>
         </div>
-
         <Picture
           alt="Page Not Found"
           sizes={[320, 480, 720]}
           src="error/404"
           types={['avif', 'webp', 'png']}
         />
-
         <Link data-testid="home-link" to="/">
           Go Home!
         </Link>

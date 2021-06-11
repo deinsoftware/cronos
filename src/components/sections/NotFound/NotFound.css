@@ -42,6 +42,7 @@ html[data-theme='dark'] {
 .not-found img {
   height: auto;
   max-width: 70%;
+  padding-bottom: 1em;
 }
 
 @media (min-width: 426px) {
