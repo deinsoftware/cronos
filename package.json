@@ -29,7 +29,7 @@
     "prepare": "husky install",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "test:c": "react-scripts test --coverage --watchAll=false --ci --findRelatedTests src/**/**.js",
+    "test:c": "react-scripts test --coverage --watchAll=false --ci",
     "test:cw": "react-scripts test --coverage --watchAll",
     "test:r": "open ./coverage/lcov-report/index.html",
     "test:tb": "jest-coverage-thresholds-bumper"
