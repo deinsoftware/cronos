@@ -7,6 +7,23 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
+            "name": "vscode-jest-tests",
+            "request": "launch",
+            "args": [
+                "test",
+                "--runInBand",
+                "--no-cache"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "disableOptimisticBPs": true,
+            "runtimeExecutable":
+                "${workspaceFolder}/node_modules/.bin/react-scripts",
+            "protocol": "inspector"
         }
     ]
 }
