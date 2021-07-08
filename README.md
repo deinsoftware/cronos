@@ -10,6 +10,7 @@
 ![Prettier](https://img.shields.io/badge/formatter-prettier-ff69b4.svg?style=flat)
 ![ESLint](https://img.shields.io/badge/linter-eslint-7C7CE9.svg?style=flat)
 ![React](https://img.shields.io/badge/made_with-react-61DBFB.svg?style=flat)
+[![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/deinsoftware/cronos)
 
 ![Cronos](.github/social/preview.png 'Cronos App')
 
