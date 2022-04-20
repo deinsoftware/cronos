@@ -130,7 +130,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ### Authors
 
-- **Camilo Martinez** [[Equiman](http://stackoverflow.com/story/equiman)]
+- **Camilo Martinez** [[Equiman](http://github.com/equiman)]
 
 See also the list of [contributors](https://github.com/deinsoftware/cronos/contributors) who participated in this project.
 
